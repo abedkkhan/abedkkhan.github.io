@@ -1,0 +1,139 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const fmtDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+// Research / papers / datasets — edit me any time
+const research = [
+  {
+    title: 'Lost in Cultural Translation: Do LLMs Struggle with Math Across Cultural Contexts?',
+    venue: 'arXiv, 2025',
+    url: 'https://arxiv.org/abs/2503.18018',
+    kind: 'arxiv',
+  },
+  {
+    title: "Galton's Law of Mediocrity: Why Large Language Models Regress to the Mean and Fail at Creativity in Advertising",
+    venue: 'arXiv, 2025',
+    url: 'https://arxiv.org/abs/2509.25767',
+    kind: 'arxiv',
+  },
+  {
+    title: 'Document Search Engine',
+    venue: 'IP Australia, 2025',
+    url: 'https://ipsearch.ipaustralia.gov.au/patents/2025204710',
+    kind: 'patent',
+  },
+  {
+    title: 'GSM8K-cultural',
+    venue: 'Hugging Face, 2025',
+    url: 'https://huggingface.co/datasets/abedk/GSM8K-cultural',
+    kind: 'dataset',
+  },
+];
+
+const links = [
+  { label: 'email', url: 'mailto:2019n06653@gmail.com' },
+  { label: 'twitter', url: 'https://x.com/abidkarim813' },
+  { label: 'linkedin', url: 'https://www.linkedin.com/in/abed-k-27a59aa0/' },
+  { label: 'github', url: 'https://github.com/akarim23131' },
+];
+---
+
+<Base title="Abed K">
+  <!-- Profile -->
+  <section class="profile">
+    <!-- Drop your profile.jpg into /public and it'll show up -->
+    <img class="profile-pic" src="/profile.png" alt="Abed K" onerror="this.outerHTML='<div class=&quot;profile-pic placeholder&quot;>[ profile image<br/>goes here ]</div>'"/>
+    <h1>Abed K</h1>
+  </section>
+
+  <!-- About -->
+  <section class="section">
+    <div class="section-head">about</div>
+    <div class="section-body about">
+      <p>
+        Hey, my name is Abed. I&apos;m an AI research engineer at
+        <strong>55mV Research Lab</strong>.
+      </p>
+      <p>
+        These days I work mostly on RL for LLMs: SFT, LoRA, GRPO,
+        RLHF, the alphabet soup. Currently trying to make LLMs more creative
+        in advertising and media, which means designing reward signals,
+        building fairly complex RL environments, putting together evaluation
+        pipelines, and playing with steering vectors. And because none of
+        this works without good data, a lot of my time also goes into
+        synthetic dataset generation, for training and for eval.
+      </p>
+      <p>
+        On the side, I&apos;m digging into linear probes and sparse
+        autoencoders (SAEs), experimenting with them, trying to actually see
+        what&apos;s happening inside these models. Hoping to contribute to
+        mech interp soon.
+      </p>
+    </div>
+  </section>
+
+  <!-- Links -->
+  <section class="section">
+    <div class="section-head">links</div>
+    <div class="section-body">
+      <div class="links-row">
+        {links.map((l) => (
+          <a href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section class="section">
+    <div class="section-head">research &amp; artifacts</div>
+    <div class="section-body">
+      <ul class="item-list">
+        {research.map((r) => (
+          <li>
+            <a class="item" href={r.url} target="_blank" rel="noopener noreferrer">
+              <div class="item-title">{r.title}</div>
+              <div class="item-meta">
+                <span class={`tag ${r.kind}`}>{r.kind}</span>
+                <span>{r.venue}</span>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Blogs -->
+  <section class="section">
+    <div class="section-head">blogs · {posts.length} posts</div>
+    <div class="section-body">
+      {posts.length === 0 ? (
+        <p style="color: var(--fg-dimmer); font-size: 13px; margin: 0;">
+          No posts yet. Drop markdown files into <code>src/content/blog/</code> and they'll appear here.
+        </p>
+      ) : (
+        <ul class="item-list">
+          {posts.map((p) => (
+            <li>
+              <a class="item" href={`/blog/${p.slug}/`}>
+                <div class="item-title">{p.data.title}</div>
+                <div class="item-meta">
+                  <span>{fmtDate(p.data.pubDate)}</span>
+                  {p.data.readTime && <span>· {p.data.readTime}</span>}
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+</Base>

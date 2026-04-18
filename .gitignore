@@ -1,0 +1,33 @@
+# build output
+dist/
+.output/
+.astro/
+
+# stray scratch images at project root (won't be referenced by site)
+/new_updated_image.png
+/*.png
+!/profile.png
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment
+.env
+.env.production
+
+# macOS
+.DS_Store
+
+# editors
+.vscode/
+.idea/
+
+# personal source files for blog posts (originals, not needed for deploy)
+blog_post_*/
+_source/

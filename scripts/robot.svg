@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300">
+  <rect width="520" height="300" fill="#ffffff"/>
+
+  <!-- antenna -->
+  <line x1="230" y1="60" x2="230" y2="40" stroke="#000" stroke-width="3"/>
+  <circle cx="230" cy="36" r="5" fill="#000"/>
+
+  <!-- head -->
+  <rect x="185" y="60" width="90" height="80" rx="10" fill="#1a1a1a"/>
+  <!-- eyes -->
+  <circle cx="207" cy="95" r="9" fill="#ffffff"/>
+  <circle cx="253" cy="95" r="9" fill="#ffffff"/>
+  <circle cx="207" cy="95" r="4" fill="#000"/>
+  <circle cx="253" cy="95" r="4" fill="#000"/>
+  <!-- mouth (content little smile) -->
+  <path d="M 212 120 Q 230 130 248 120" stroke="#000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- cheek bolts -->
+  <circle cx="188" cy="100" r="3" fill="#444"/>
+  <circle cx="272" cy="100" r="3" fill="#444"/>
+
+  <!-- neck -->
+  <rect x="220" y="140" width="20" height="12" fill="#333"/>
+
+  <!-- body (rounded torso) -->
+  <rect x="160" y="152" width="140" height="110" rx="14" fill="#2a2a2a"/>
+  <!-- chest panel -->
+  <rect x="195" y="175" width="70" height="35" rx="4" fill="#888"/>
+  <circle cx="210" cy="192" r="4" fill="#111"/>
+  <circle cx="230" cy="192" r="4" fill="#111"/>
+  <circle cx="250" cy="192" r="4" fill="#111"/>
+  <!-- belt -->
+  <rect x="160" y="230" width="140" height="10" fill="#111"/>
+
+  <!-- LEFT arm: dangling, holding unplugged cable -->
+  <rect x="130" y="160" width="30" height="70" rx="6" fill="#2a2a2a"/>
+  <!-- left hand -->
+  <circle cx="145" cy="232" r="12" fill="#1a1a1a"/>
+  <!-- cable from hand, unplugged -->
+  <path d="M 145 244 Q 110 260 90 275 Q 70 285 55 270" stroke="#111" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- plug head -->
+  <rect x="35" y="262" width="22" height="14" rx="2" fill="#000"/>
+  <rect x="28" y="265" width="9" height="3" fill="#000"/>
+  <rect x="28" y="271" width="9" height="3" fill="#000"/>
+
+  <!-- RIGHT arm: raised, holding teacup -->
+  <rect x="300" y="150" width="30" height="55" rx="6" fill="#2a2a2a"/>
+  <!-- right hand -->
+  <circle cx="315" cy="205" r="12" fill="#1a1a1a"/>
+  <!-- teacup: trapezoidal cup + handle -->
+  <path d="M 340 195 L 335 220 L 380 220 L 375 195 Z" fill="#eeeeee" stroke="#000" stroke-width="2.5"/>
+  <!-- saucer -->
+  <ellipse cx="357" cy="224" rx="28" ry="4" fill="#ccc" stroke="#000" stroke-width="1.5"/>
+  <!-- handle -->
+  <path d="M 375 200 Q 393 200 393 210 Q 393 220 378 220" fill="none" stroke="#000" stroke-width="2.5"/>
+  <!-- tea surface -->
+  <ellipse cx="357" cy="196" rx="17" ry="2.5" fill="#5a3a1a"/>
+  <!-- steam lines -->
+  <path d="M 345 190 Q 340 180 345 170 Q 350 160 345 150" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M 357 192 Q 353 182 357 172 Q 361 162 357 152" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M 369 190 Q 365 180 369 170 Q 373 160 369 150" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- LEGS: crossed sitting -->
+  <rect x="175" y="260" width="45" height="20" rx="4" fill="#2a2a2a"/>
+  <rect x="240" y="260" width="45" height="20" rx="4" fill="#2a2a2a"/>
+  <!-- feet -->
+  <ellipse cx="175" cy="282" rx="18" ry="6" fill="#111"/>
+  <ellipse cx="285" cy="282" rx="18" ry="6" fill="#111"/>
+
+  <!-- tiny "unplugged" spark/dust near plug (subtle) -->
+  <circle cx="65" cy="258" r="1.5" fill="#888"/>
+  <circle cx="72" cy="253" r="1" fill="#888"/>
+
+  <!-- ground shadow -->
+  <ellipse cx="230" cy="290" rx="120" ry="5" fill="#ccc"/>
+</svg>
