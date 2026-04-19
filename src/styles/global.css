@@ -268,15 +268,16 @@ main {
 
 /* ---------- Blog post page ---------- */
 .prose {
-  font-family: var(--serif);
-  font-size: 17px;
+  font-family: var(--mono);
+  font-size: 14.5px;
   line-height: 1.75;
   color: var(--fg);
 }
-.prose h1 { font-family: var(--mono); font-size: 26px; margin: 30px 0 8px; }
-.prose h2 { font-family: var(--mono); font-size: 20px; margin: 30px 0 8px; color: var(--accent-soft); }
-.prose h3 { font-family: var(--mono); font-size: 16px; margin: 24px 0 6px; }
+.prose h1 { font-family: var(--mono); font-size: 22px; margin: 30px 0 10px; line-height: 1.35; }
+.prose h2 { font-family: var(--mono); font-size: 17px; margin: 30px 0 10px; color: var(--accent-soft); }
+.prose h3 { font-family: var(--mono); font-size: 15px; margin: 24px 0 8px; }
 .prose p { margin: 0 0 18px; }
+.prose strong { color: var(--accent-soft); font-weight: 600; }
 /* ---------- Old-school amber terminal code blocks ---------- */
 .prose code {
   font-family: 'Courier New', Courier, ui-monospace, monospace;
