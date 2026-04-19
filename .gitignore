@@ -28,6 +28,9 @@ pnpm-debug.log*
 .vscode/
 .idea/
 
+# local only — not for remote
+README.md
+
 # personal source files for blog posts (originals, not needed for deploy)
 blog_post_*/
 _source/
