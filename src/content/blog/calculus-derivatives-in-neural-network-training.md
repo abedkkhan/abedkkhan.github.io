@@ -1,7 +1,7 @@
 ---
 title: "How basic concept of Calculus (Derivative) has a Key Role in Training Neural Networks?"
 description: "Walking through how derivatives, the chain rule, and gradient resets shape neural network training — built from scratch."
-pubDate: 2024-12-27
+pubDate: 2024-09-05
 originalUrl: "https://aabidkarim.hashnode.dev/how-basic-concept-of-calculus-derivative-has-a-key-role-in-training-neural-networks"
 readTime: "9 min read"
 tags: ["neural-networks", "calculus", "backpropagation", "training"]

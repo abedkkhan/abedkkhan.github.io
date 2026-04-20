@@ -1,7 +1,7 @@
 ---
 title: "Training a Basic Language Model (Trigram Language Model)"
 description: "Training a trigram language model from scratch — using both the counting approach and a gradient-based neural network approach in PyTorch."
-pubDate: 2024-12-27
+pubDate: 2024-09-18
 readTime: "13 min read"
 tags: ["language-models", "trigram", "pytorch", "neural-networks"]
 ---
