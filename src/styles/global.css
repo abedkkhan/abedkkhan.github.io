@@ -355,8 +355,6 @@ main {
   border: 1px solid #2a2a30;
 }
 .prose pre {
-  background: #151518;
-  color: #e8e8ea;
   padding: 16px 18px;
   border-radius: 5px;
   border: 1px solid #2a2a30;
@@ -373,6 +371,11 @@ main {
   color: inherit;
   font: inherit;
   display: block;
+}
+/* Shiki highlighted blocks — let the theme drive token colors */
+.prose pre.astro-code,
+.prose pre.astro-code code {
+  font-family: var(--mono);
 }
 .prose img { border-radius: 4px; margin: 18px 0; border: 1px solid var(--border); }
 .prose blockquote {
