@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0b0c"/>
+      <stop offset="100%" stop-color="#15151a"/>
+    </linearGradient>
+    <pattern id="grid1" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e1e24" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#bg1)"/>
+  <rect width="1200" height="600" fill="url(#grid1)"/>
+
+  <!-- axes -->
+  <line x1="100" y1="500" x2="1100" y2="500" stroke="#3a3a44" stroke-width="1.5"/>
+  <line x1="200" y1="80" x2="200" y2="540" stroke="#3a3a44" stroke-width="1.5"/>
+
+  <!-- curve f(x) = smooth polynomial -->
+  <path d="M 200 470 Q 350 480 450 420 T 700 260 T 950 140 L 1050 110"
+        fill="none" stroke="#f59e0b" stroke-width="3" opacity="0.9"/>
+
+  <!-- tangent line -->
+  <line x1="500" y1="480" x2="900" y2="140"
+        stroke="#93c5fd" stroke-width="2" stroke-dasharray="6 4" opacity="0.85"/>
+
+  <!-- tangent point glow + dot -->
+  <circle cx="700" cy="260" r="30" fill="url(#glow1)"/>
+  <circle cx="700" cy="260" r="6" fill="#fbbf24" stroke="#fff" stroke-width="1.5"/>
+
+  <!-- rise/run triangle -->
+  <line x1="700" y1="260" x2="850" y2="260" stroke="#71717a" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <line x1="850" y1="260" x2="850" y2="170" stroke="#71717a" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+  <!-- labels -->
+  <g font-family="'JetBrains Mono', 'Menlo', monospace" fill="#e5e5e5">
+    <text x="760" y="290" font-size="18" fill="#a1a1aa">Δx</text>
+    <text x="860" y="220" font-size="18" fill="#a1a1aa">Δy</text>
+    <text x="720" y="240" font-size="22" fill="#93c5fd">f'(x)</text>
+  </g>
+
+  <!-- title -->
+  <g font-family="'JetBrains Mono', 'Menlo', monospace" fill="#e5e5e5">
+    <text x="100" y="130" font-size="36" fill="#f59e0b" font-weight="700">∂</text>
+    <text x="150" y="130" font-size="30" font-weight="700">derivatives</text>
+    <text x="100" y="170" font-size="16" fill="#71717a">the gradient signal that trains every neural network</text>
+  </g>
+
+  <!-- formula chip -->
+  <g transform="translate(900, 440)">
+    <rect x="0" y="0" width="200" height="50" rx="6" fill="#1e1e1e" stroke="#2a2a30"/>
+    <text x="20" y="33" font-family="'JetBrains Mono', 'Menlo', monospace"
+          font-size="20" fill="#D4D4D4">dL/dw = </text>
+    <text x="130" y="33" font-family="'JetBrains Mono', 'Menlo', monospace"
+          font-size="20" fill="#B5CEA8">∂L/∂a</text>
+  </g>
+</svg>

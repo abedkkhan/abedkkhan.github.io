@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0b0c"/>
+      <stop offset="100%" stop-color="#15151a"/>
+    </linearGradient>
+    <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e1e24" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#bg3)"/>
+  <rect width="1200" height="600" fill="url(#grid3)"/>
+
+  <!-- edges between trigram tokens -->
+  <g stroke="#3a3a44" stroke-width="1.5" fill="none" opacity="0.8">
+    <!-- from (t-2, t-1) => t -->
+    <path d="M 280 360 C 420 340, 520 300, 640 300" stroke="#f59e0b" stroke-width="2.5" opacity="0.9"/>
+    <path d="M 280 360 C 420 380, 520 440, 640 440" />
+    <path d="M 280 360 C 400 370, 500 500, 640 520" />
+
+    <path d="M 640 300 C 760 290, 880 260, 980 220" stroke="#fbbf24" stroke-width="2.5" opacity="0.95"/>
+    <path d="M 640 300 C 760 320, 880 360, 980 340" />
+    <path d="M 640 300 C 760 350, 880 440, 980 460" />
+  </g>
+
+  <!-- previous-2 token -->
+  <g transform="translate(180, 340)">
+    <rect x="0" y="0" width="120" height="44" rx="6" fill="#1e1e1e" stroke="#2a2a30"/>
+    <text x="60" y="28" font-family="'JetBrains Mono', 'Menlo', monospace" font-size="16" fill="#D4D4D4" text-anchor="middle">the</text>
+  </g>
+
+  <!-- previous-1 token (current context) -->
+  <g transform="translate(540, 280)">
+    <circle cx="50" cy="20" r="40" fill="url(#nodeGlow)"/>
+    <rect x="0" y="0" width="120" height="44" rx="6" fill="#1e1e1e" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="60" y="28" font-family="'JetBrains Mono', 'Menlo', monospace" font-size="16" fill="#fbbf24" text-anchor="middle">quick</text>
+  </g>
+
+  <!-- next token candidates with probabilities -->
+  <g font-family="'JetBrains Mono', 'Menlo', monospace">
+    <g transform="translate(940, 200)">
+      <rect x="0" y="0" width="160" height="44" rx="6" fill="#1e1e1e" stroke="#2a2a30"/>
+      <text x="16" y="28" font-size="15" fill="#D4D4D4">brown</text>
+      <text x="144" y="28" font-size="13" fill="#B5CEA8" text-anchor="end">0.62</text>
+    </g>
+    <g transform="translate(940, 320)">
+      <rect x="0" y="0" width="160" height="44" rx="6" fill="#1e1e1e" stroke="#2a2a30"/>
+      <text x="16" y="28" font-size="15" fill="#9ca3af">fox</text>
+      <text x="144" y="28" font-size="13" fill="#6b7280" text-anchor="end">0.18</text>
+    </g>
+    <g transform="translate(940, 440)">
+      <rect x="0" y="0" width="160" height="44" rx="6" fill="#1e1e1e" stroke="#2a2a30"/>
+      <text x="16" y="28" font-size="15" fill="#9ca3af">lazy</text>
+      <text x="144" y="28" font-size="13" fill="#6b7280" text-anchor="end">0.08</text>
+    </g>
+  </g>
+
+  <!-- title -->
+  <g font-family="'JetBrains Mono', 'Menlo', monospace" fill="#e5e5e5">
+    <text x="100" y="120" font-size="30" font-weight="700">trigram LM</text>
+    <text x="100" y="160" font-size="16" fill="#f59e0b">a tiny language model from counts</text>
+    <text x="100" y="190" font-size="14" fill="#71717a">P(w₃ | w₁, w₂) — the simplest next-token distribution</text>
+  </g>
+
+  <!-- formula chip -->
+  <g transform="translate(820, 500)">
+    <rect x="0" y="0" width="280" height="50" rx="6" fill="#1e1e1e" stroke="#2a2a30"/>
+    <text x="20" y="33" font-family="'JetBrains Mono', 'Menlo', monospace" font-size="16" fill="#D4D4D4">argmax</text>
+    <text x="100" y="33" font-family="'JetBrains Mono', 'Menlo', monospace" font-size="16" fill="#B5CEA8">P(wₜ | wₜ₋₂, wₜ₋₁)</text>
+  </g>
+</svg>

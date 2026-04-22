@@ -7,6 +7,8 @@ readTime: "9 min read"
 tags: ["neural-networks", "calculus", "backpropagation", "training"]
 ---
 
+![Cover image — calculus derivatives in neural network training](/blog/calculus-derivatives-in-neural-network-training/cover.svg)
+
 A Neural Network is a machine learning model that works like the human brain. Just like how our brain has neurons that send signals, a neural network has artificial neurons that pass information. The network takes input, does some math, and passes the information to the next neurons until it reaches a decision.
 
 Each neuron has a weight, which shows how important it is for that neuron to pass the signal. This is like how our brain gives more attention to important thoughts or emotions. When the network doesn't make the right decision, it uses a method called backpropagation to go back and check how much each neuron's importance affected the decision. Then, it adjusts these weights to try and get a better result next time. This process helps the neural network learn and improve over time, just like how we learn from our mistakes. Below is the basic structure of a neural network.

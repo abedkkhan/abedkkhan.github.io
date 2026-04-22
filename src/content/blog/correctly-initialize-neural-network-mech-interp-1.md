@@ -6,6 +6,8 @@ readTime: "10 min read"
 tags: ["mechanistic-interpretability", "neural-networks", "initialization", "pytorch"]
 ---
 
+![Cover image — correctly initializing a neural network, mech-interp part 1](/blog/correctly-initialize-neural-network-mech-interp-1/cover.svg)
+
 Artificial Intelligence's research and new models with more advance architectures is evolving very rapidly. But at the same time research dynamics are shifting towards analyzing and understanding the more hidden bugs in training neural networks. The research is trying to understand neural networks by breaking them down into more smaller and understandable parts. The goal is to understand each smaller part and how these smaller parts interacts with each other to make up the entire behavior of a neural network. It also identifies the hidden bugs during initialization, training, and optimization. Bugs, which we might unconsciously ignore and can cause a problem in network training and learning patterns. This whole phenomena is called "Mechanistic Interpretability".
 
 So, basically, now to get better output, you don't just have to change your input, change the number of parameters, hyperparameters, embedding dimensions, activation functions or another thing. You can also, and this can have a better impact on over all training, inspect the network through the lens of "Mechanistic Interpretability".

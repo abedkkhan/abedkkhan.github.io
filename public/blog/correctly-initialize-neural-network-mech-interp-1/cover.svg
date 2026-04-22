@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0b0c"/>
+      <stop offset="100%" stop-color="#15151a"/>
+    </linearGradient>
+    <pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e1e24" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="barGood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="barBad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#374151"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#bg2)"/>
+  <rect width="1200" height="600" fill="url(#grid2)"/>
+
+  <!-- axes -->
+  <line x1="140" y1="500" x2="1100" y2="500" stroke="#3a3a44" stroke-width="1.5"/>
+  <line x1="140" y1="240" x2="140" y2="500" stroke="#3a3a44" stroke-width="1.5"/>
+
+  <!-- bad init: saturated/collapsed histogram (left) -->
+  <g transform="translate(200, 0)">
+    <rect x="0"   y="490" width="22" height="10" fill="url(#barBad)"/>
+    <rect x="26"  y="488" width="22" height="12" fill="url(#barBad)"/>
+    <rect x="52"  y="485" width="22" height="15" fill="url(#barBad)"/>
+    <rect x="78"  y="470" width="22" height="30" fill="url(#barBad)"/>
+    <rect x="104" y="380" width="22" height="120" fill="url(#barBad)"/>
+    <rect x="130" y="300" width="22" height="200" fill="url(#barBad)"/>
+    <rect x="156" y="380" width="22" height="120" fill="url(#barBad)"/>
+    <rect x="182" y="470" width="22" height="30" fill="url(#barBad)"/>
+    <rect x="208" y="485" width="22" height="15" fill="url(#barBad)"/>
+    <rect x="234" y="488" width="22" height="12" fill="url(#barBad)"/>
+    <rect x="260" y="490" width="22" height="10" fill="url(#barBad)"/>
+    <text x="140" y="540" font-family="'JetBrains Mono', 'Menlo', monospace" font-size="14" fill="#71717a" text-anchor="middle">naive init</text>
+  </g>
+
+  <!-- good init: nice gaussian (right) -->
+  <g transform="translate(650, 0)">
+    <rect x="0"   y="485" width="22" height="15" fill="url(#barGood)"/>
+    <rect x="26"  y="470" width="22" height="30" fill="url(#barGood)"/>
+    <rect x="52"  y="440" width="22" height="60" fill="url(#barGood)"/>
+    <rect x="78"  y="400" width="22" height="100" fill="url(#barGood)"/>
+    <rect x="104" y="350" width="22" height="150" fill="url(#barGood)"/>
+    <rect x="130" y="310" width="22" height="190" fill="url(#barGood)"/>
+    <rect x="156" y="350" width="22" height="150" fill="url(#barGood)"/>
+    <rect x="182" y="400" width="22" height="100" fill="url(#barGood)"/>
+    <rect x="208" y="440" width="22" height="60" fill="url(#barGood)"/>
+    <rect x="234" y="470" width="22" height="30" fill="url(#barGood)"/>
+    <rect x="260" y="485" width="22" height="15" fill="url(#barGood)"/>
+    <!-- gaussian curve overlay -->
+    <path d="M 0 495 Q 70 490 90 460 Q 120 390 141 310 Q 162 390 192 460 Q 212 490 282 495"
+          fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.9"/>
+    <text x="141" y="540" font-family="'JetBrains Mono', 'Menlo', monospace" font-size="14" fill="#71717a" text-anchor="middle">kaiming init</text>
+  </g>
+
+  <!-- title -->
+  <g font-family="'JetBrains Mono', 'Menlo', monospace" fill="#e5e5e5">
+    <text x="100" y="120" font-size="30" font-weight="700">initialization</text>
+    <text x="100" y="160" font-size="18" fill="#f59e0b">mech-interp · part 1</text>
+    <text x="100" y="195" font-size="15" fill="#71717a">why the first weights you pick decide whether the network learns</text>
+  </g>
+
+  <!-- formula chip -->
+  <g transform="translate(880, 120)">
+    <rect x="0" y="0" width="220" height="90" rx="6" fill="#1e1e1e" stroke="#2a2a30"/>
+    <text x="20" y="32" font-family="'JetBrains Mono', 'Menlo', monospace" font-size="14" fill="#D4D4D4">W ~ N(0, σ²)</text>
+    <text x="20" y="60" font-family="'JetBrains Mono', 'Menlo', monospace" font-size="14" fill="#D4D4D4">σ² =</text>
+    <text x="60" y="60" font-family="'JetBrains Mono', 'Menlo', monospace" font-size="14" fill="#B5CEA8">2 / fan_in</text>
+    <text x="20" y="80" font-family="'JetBrains Mono', 'Menlo', monospace" font-size="12" fill="#6a9955">// kaiming</text>
+  </g>
+</svg>
