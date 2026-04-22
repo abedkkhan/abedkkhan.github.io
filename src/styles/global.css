@@ -86,12 +86,13 @@ main {
 
 .profile-pic {
   width: 100%;
-  max-width: 360px;
-  height: auto;
+  max-width: 320px;
+  height: 320px;
   border-radius: 6px;
   margin: 0 auto 18px;
   border: 1px solid var(--border);
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center 20%;
   filter: saturate(0.9) contrast(1.02);
   background: var(--bg-panel);
   box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.04), 0 20px 40px -20px rgba(0,0,0,0.6);
@@ -352,7 +353,7 @@ main {
 /* ---------- Mobile ---------- */
 @media (max-width: 520px) {
   main { padding: 40px 16px 80px; }
-  .profile-pic { max-width: 100%; }
+  .profile-pic { max-width: 280px; height: 280px; }
   .profile h1 { font-size: 18px; }
   .prose { font-size: 16px; }
 }
