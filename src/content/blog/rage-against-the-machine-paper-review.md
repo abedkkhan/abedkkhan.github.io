@@ -6,6 +6,8 @@ readTime: "10 min read"
 tags: ["llms", "rag", "paper-review", "retrieval-augmented-generation"]
 ---
 
+![Cover image — RAGE Against the Machine paper review](/blog/rage-against-the-machine-paper-review/cover.webp)
+
 In recent years, we've witnessed remarkable advancements, particularly with large language models like `GPT`, `Gemini`, `Claude`, and others. Research scientists are now training increasingly complex models, extending their context lengths, and equipping them with billions or even trillions of parameters and boosting their computational capabilities. However, as these models improve rapidly, issues arise regarding their outputs. Researchers are now focusing on quantifying the accuracy, timeliness, and reasoning behind these outputs, as well as troubleshooting their limitations.
 
 In [my last blog post](/blog/can-we-count-on-llms-paper-review/), I discussed a paper exploring whether we can generalize LLMs, rely on their capabilities, and avoid falling into the trap of fixed effects.
