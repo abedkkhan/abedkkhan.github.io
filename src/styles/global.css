@@ -347,13 +347,17 @@ main {
 /* ---------- Readable inline code + code blocks ---------- */
 .prose code {
   font-family: var(--mono);
-  background: #1b1b1f;
+  background: #1e1e1e;
   color: #e6e6e6;
   padding: 1px 6px;
   border-radius: 3px;
   font-size: 13.5px;
   border: 1px solid #2a2a30;
 }
+/* inline python-highlighted code — spans already carry their own color
+   from Shiki; keep the chip background consistent */
+.prose code.inline-code { background: #1e1e1e; }
+.prose code.inline-code span { background: transparent !important; }
 .prose pre {
   padding: 16px 18px;
   border-radius: 5px;
