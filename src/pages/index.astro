@@ -48,8 +48,108 @@ const links = [
 <Base title="Abed K">
   <!-- Profile -->
   <section class="profile">
-    <!-- Drop your profile.jpg into /public and it'll show up -->
-    <img class="profile-pic" src="/profile.png" alt="Abed K" onerror="this.outerHTML='<div class=&quot;profile-pic placeholder&quot;>[ profile image<br/>goes here ]</div>'"/>
+    <div class="nn-anim" aria-hidden="true">
+      <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <radialGradient id="node-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.9"/>
+            <stop offset="60%" stop-color="#f59e0b" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="edge-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#f59e0b" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#f59e0b" stop-opacity="0.45"/>
+            <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+
+        <!-- edges: input(4) x=60  -> hidden(6) x=180 -> output(3) x=300 -->
+        <g class="nn-edges" stroke="#3a2d10" stroke-width="0.8" fill="none">
+          <!-- input -> hidden -->
+          <line x1="60" y1="40"  x2="180" y2="20"/>
+          <line x1="60" y1="40"  x2="180" y2="56"/>
+          <line x1="60" y1="40"  x2="180" y2="92"/>
+          <line x1="60" y1="40"  x2="180" y2="128"/>
+          <line x1="60" y1="40"  x2="180" y2="164"/>
+          <line x1="60" y1="40"  x2="180" y2="180"/>
+
+          <line x1="60" y1="80"  x2="180" y2="20"/>
+          <line x1="60" y1="80"  x2="180" y2="56"/>
+          <line x1="60" y1="80"  x2="180" y2="92"/>
+          <line x1="60" y1="80"  x2="180" y2="128"/>
+          <line x1="60" y1="80"  x2="180" y2="164"/>
+          <line x1="60" y1="80"  x2="180" y2="180"/>
+
+          <line x1="60" y1="120" x2="180" y2="20"/>
+          <line x1="60" y1="120" x2="180" y2="56"/>
+          <line x1="60" y1="120" x2="180" y2="92"/>
+          <line x1="60" y1="120" x2="180" y2="128"/>
+          <line x1="60" y1="120" x2="180" y2="164"/>
+          <line x1="60" y1="120" x2="180" y2="180"/>
+
+          <line x1="60" y1="160" x2="180" y2="20"/>
+          <line x1="60" y1="160" x2="180" y2="56"/>
+          <line x1="60" y1="160" x2="180" y2="92"/>
+          <line x1="60" y1="160" x2="180" y2="128"/>
+          <line x1="60" y1="160" x2="180" y2="164"/>
+          <line x1="60" y1="160" x2="180" y2="180"/>
+
+          <!-- hidden -> output -->
+          <line x1="180" y1="20"  x2="300" y2="60"/>
+          <line x1="180" y1="20"  x2="300" y2="100"/>
+          <line x1="180" y1="20"  x2="300" y2="140"/>
+
+          <line x1="180" y1="56"  x2="300" y2="60"/>
+          <line x1="180" y1="56"  x2="300" y2="100"/>
+          <line x1="180" y1="56"  x2="300" y2="140"/>
+
+          <line x1="180" y1="92"  x2="300" y2="60"/>
+          <line x1="180" y1="92"  x2="300" y2="100"/>
+          <line x1="180" y1="92"  x2="300" y2="140"/>
+
+          <line x1="180" y1="128" x2="300" y2="60"/>
+          <line x1="180" y1="128" x2="300" y2="100"/>
+          <line x1="180" y1="128" x2="300" y2="140"/>
+
+          <line x1="180" y1="164" x2="300" y2="60"/>
+          <line x1="180" y1="164" x2="300" y2="100"/>
+          <line x1="180" y1="164" x2="300" y2="140"/>
+
+          <line x1="180" y1="180" x2="300" y2="60"/>
+          <line x1="180" y1="180" x2="300" y2="100"/>
+          <line x1="180" y1="180" x2="300" y2="140"/>
+        </g>
+
+        <!-- signal pulses: traveling dots that sweep left->right -->
+        <g class="nn-pulses">
+          <circle class="pulse p1" r="2.2" fill="#fbbf24"/>
+          <circle class="pulse p2" r="2.2" fill="#fbbf24"/>
+          <circle class="pulse p3" r="2.2" fill="#fbbf24"/>
+          <circle class="pulse p4" r="2.2" fill="#fbbf24"/>
+          <circle class="pulse p5" r="2.2" fill="#fbbf24"/>
+        </g>
+
+        <!-- nodes -->
+        <g class="nn-nodes">
+          <!-- input layer -->
+          <circle class="node n-in"  cx="60"  cy="40"  r="6"/>
+          <circle class="node n-in"  cx="60"  cy="80"  r="6"/>
+          <circle class="node n-in"  cx="60"  cy="120" r="6"/>
+          <circle class="node n-in"  cx="60"  cy="160" r="6"/>
+          <!-- hidden layer -->
+          <circle class="node n-hid" cx="180" cy="20"  r="6"/>
+          <circle class="node n-hid" cx="180" cy="56"  r="6"/>
+          <circle class="node n-hid" cx="180" cy="92"  r="6"/>
+          <circle class="node n-hid" cx="180" cy="128" r="6"/>
+          <circle class="node n-hid" cx="180" cy="164" r="6"/>
+          <circle class="node n-hid" cx="180" cy="180" r="6"/>
+          <!-- output layer -->
+          <circle class="node n-out" cx="300" cy="60"  r="6"/>
+          <circle class="node n-out" cx="300" cy="100" r="6"/>
+          <circle class="node n-out" cx="300" cy="140" r="6"/>
+        </g>
+      </svg>
+    </div>
     <h1>Abed K</h1>
   </section>
 
