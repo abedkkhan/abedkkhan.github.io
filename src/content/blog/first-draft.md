@@ -34,4 +34,4 @@ So follow one of those intermediates through. It appears. It gets scored. It sco
 
 The route isn't something the search failed to find. It found it, repeatedly, and threw it out every time. And it threw it out correctly. Selection is supposed to remove lower-scoring candidates. That's the whole job. There's no malfunction anywhere in this, which is why tuning the training never helped: we were looking for a fault in a process that didn't have one.
 
-Deception isn't a property of the search method. It's a property of what we chose to score, and it survives whatever we optimise it with. Their conclusion is the line that keeps coming back: while it seems natural to blame the search algorithm when search fails to reach the objective, the problem may ultimately lie in the pursuit of the objective itself.
+Deception isn't a property of the search method. It's a property of what we chose to score, and it survives whatever we optimise it with. Their conclusion: while it seems natural to blame the search algorithm when search fails to reach the objective, the problem may ultimately lie in the pursuit of the objective itself.
