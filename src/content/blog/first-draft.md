@@ -2,7 +2,7 @@
 title: "First Draft"
 description: "On finetuning for creativity: the target we can only verify once, the proxy we optimize instead, and a reward curve that keeps climbing while the outputs collapse."
 pubDate: 2026-09-04
-readTime: "11 min read"
+readTime: "12 min read"
 tags: ["rl", "reward-hacking", "creativity", "evaluation"]
 ---
 
@@ -85,6 +85,12 @@ That's a genuine escape from some deceptions. But it costs us others: the same w
 Note what novelty search actually changed. Not the loop: same population, same mutation, same selection. Only the input to selection, from how close a candidate came to the goal to how unlike everything already seen it was.
 
 Which settles what the result is evidence for. Not that evolutionary search is better, since it is the same search. The objective was doing the trapping. Remove the pull toward a goal and the traps stop being traps, not because we climb out of them but because nothing is holding us there.
+
+## Widening the Knob
+
+[Go-Explore](https://arxiv.org/abs/1901.10995) is worth pausing on, because it cuts against the framing. It changes nothing about the reward and takes whatever the environment provides. What it changes is where an episode begins. The paper names two failures: detachment, where an algorithm forgets how to reach a promising state it already found, and derailment, where it tries to explore on the way back and never arrives. The fix is an archive and a rule: return to a stored state deliberately, without exploring en route, and only then explore. The agent isn't smarter. It isn't allowed to forget, and it isn't allowed to wander on the way back.
+
+That produced roughly four times the previous best on Montezuma's Revenge, a benchmark built to defeat exploration. Pure mechanics, no objective touched. But notice what kind of hard Montezuma is. The reward is sparse and silent for long stretches, and it isn't lying. Nothing in that game scores a bad state highly. The problem is reaching the states the reward already values, which is a different thing from a reward model that confidently prefers the bland completion. No amount of better exploring fixes the second. We would only be finding more efficient routes to the wrong place.
 
 ## The Objection
 
