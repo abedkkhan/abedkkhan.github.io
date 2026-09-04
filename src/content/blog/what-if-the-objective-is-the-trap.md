@@ -64,7 +64,7 @@ Copying evolution into code isn't new. Evolutionary algorithms have done it for 
 
 But something gets added in the translation, and it isn't small. Nothing ever wrote nature's target down. An evolutionary algorithm needs one written down, because selection has to be told what "better" means. So a fitness function goes in (written by someone, pointing at a goal) and from that moment the algorithm is maximising a number the way any other optimiser does. Population and mutation are the parts inherited from nature. The objective is the part that wasn't there.
 
-![A walled garden. On the left an old apple tree that grew where it landed, heavy and lopsided. A few paces away, trained flat against the wall on horizontal wires, another apple tree of the same kind, pruned for years into a shape that was drawn before it was planted. Both are carrying fruit. Same soil, same rain, same sun, and only one of them was told what to become.](/blog/what-if-the-objective-is-the-trap/image_4.webp)
+![A formal garden seen from the terrace above it, with open country beyond. In the foreground a parterre laid out to a drawing made before anything was planted, its beds answering each other in a pattern that only resolves when seen from up here. Past the boundary wall the same land continues as woodland that arranged itself, with no line in it drawn by anybody. Same soil, same rain, same seasons on both sides of the wall.](/blog/what-if-the-objective-is-the-trap/image_4.webp)
 
 Which means "be more like evolution" splits into two different instructions, and they are not the same size. Copying the search is easy. Dropping the goal is the hard one, because selection has to be told something.
 
