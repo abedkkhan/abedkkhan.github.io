@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="fdBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0b0c"/>
+      <stop offset="100%" stop-color="#15151a"/>
+    </linearGradient>
+    <pattern id="fdGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e1e24" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="fdCurve" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="fdUnder" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#fdBg)"/>
+  <rect width="1200" height="600" fill="url(#fdGrid)"/>
+
+  <!-- ── upper panel: the reward curve, climbing the whole way ── -->
+  <g font-family="'JetBrains Mono', 'Menlo', monospace">
+    <text x="90" y="76" font-size="15" fill="#a1a1aa" letter-spacing="1.5">reward</text>
+
+    <!-- axes -->
+    <path d="M 90 300 L 1110 300" stroke="#2a2a30" stroke-width="1.5"/>
+    <path d="M 90 96 L 90 300" stroke="#2a2a30" stroke-width="1.5"/>
+
+    <!-- area under the curve -->
+    <path d="M 90 268 C 300 240, 420 196, 560 176 C 720 152, 880 136, 1090 122 L 1090 300 L 90 300 Z"
+          fill="url(#fdUnder)"/>
+    <!-- the curve itself -->
+    <path d="M 90 268 C 300 240, 420 196, 560 176 C 720 152, 880 136, 1090 122"
+          fill="none" stroke="url(#fdCurve)" stroke-width="3.5" stroke-linecap="round"/>
+
+    <circle cx="1090" cy="122" r="5.5" fill="#fbbf24"/>
+    <circle cx="1090" cy="122" r="12" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.45"/>
+  </g>
+
+  <!-- ── divider ── -->
+  <path d="M 90 348 L 1110 348" stroke="#1e1e24" stroke-width="1" stroke-dasharray="4 8"/>
+
+  <!-- ── lower panel: samples, collapsing into one shape ── -->
+  <g font-family="'JetBrains Mono', 'Menlo', monospace">
+    <text x="90" y="398" font-size="15" fill="#a1a1aa" letter-spacing="1.5">samples</text>
+
+    <!-- step 1 — varied -->
+    <g transform="translate(90, 428)">
+      <rect x="0"  y="6"  width="26" height="70" rx="4" fill="#1e1e1e" stroke="#3a3a44"/>
+      <rect x="34" y="34" width="26" height="42" rx="4" fill="#1e1e1e" stroke="#3a3a44"/>
+      <rect x="68" y="0"  width="26" height="76" rx="4" fill="#1e1e1e" stroke="#3a3a44"/>
+      <rect x="102" y="46" width="26" height="30" rx="4" fill="#1e1e1e" stroke="#3a3a44"/>
+    </g>
+
+    <!-- step 2 — narrowing -->
+    <g transform="translate(330, 428)">
+      <rect x="0"  y="14" width="26" height="62" rx="4" fill="#1e1e1e" stroke="#3a3a44"/>
+      <rect x="34" y="28" width="26" height="48" rx="4" fill="#1e1e1e" stroke="#3a3a44"/>
+      <rect x="68" y="10" width="26" height="66" rx="4" fill="#1e1e1e" stroke="#3a3a44"/>
+      <rect x="102" y="34" width="26" height="42" rx="4" fill="#1e1e1e" stroke="#3a3a44"/>
+    </g>
+
+    <!-- step 3 — nearly identical -->
+    <g transform="translate(570, 428)">
+      <rect x="0"  y="22" width="26" height="54" rx="4" fill="#1e1e1e" stroke="#54545e"/>
+      <rect x="34" y="26" width="26" height="50" rx="4" fill="#1e1e1e" stroke="#54545e"/>
+      <rect x="68" y="22" width="26" height="54" rx="4" fill="#1e1e1e" stroke="#54545e"/>
+      <rect x="102" y="26" width="26" height="50" rx="4" fill="#1e1e1e" stroke="#54545e"/>
+    </g>
+
+    <!-- step 4 — collapsed, and confident -->
+    <g transform="translate(810, 428)">
+      <rect x="0"  y="24" width="26" height="52" rx="4" fill="#2a1f08" stroke="#f59e0b" stroke-width="1.5"/>
+      <rect x="34" y="24" width="26" height="52" rx="4" fill="#2a1f08" stroke="#f59e0b" stroke-width="1.5"/>
+      <rect x="68" y="24" width="26" height="52" rx="4" fill="#2a1f08" stroke="#f59e0b" stroke-width="1.5"/>
+      <rect x="102" y="24" width="26" height="52" rx="4" fill="#2a1f08" stroke="#f59e0b" stroke-width="1.5"/>
+    </g>
+
+    <!-- and again -->
+    <g transform="translate(1050, 428)" opacity="0.9">
+      <rect x="0"  y="24" width="26" height="52" rx="4" fill="#2a1f08" stroke="#f59e0b" stroke-width="1.5"/>
+      <rect x="34" y="24" width="26" height="52" rx="4" fill="#2a1f08" stroke="#f59e0b" stroke-width="1.5"/>
+    </g>
+
+    <!-- shared time axis -->
+    <path d="M 90 536 L 1110 536" stroke="#2a2a30" stroke-width="1.5"/>
+    <text x="90" y="562" font-size="13" fill="#71717a">step 0</text>
+    <text x="1110" y="562" font-size="13" fill="#71717a" text-anchor="end">step N</text>
+  </g>
+</svg>
