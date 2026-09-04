@@ -18,7 +18,7 @@ The model never sees the target. It only ever sees the proxy. So: the reward goe
 
 Not worse in any way the numbers can see. On the benchmark everything is fine. Diversity scores hold. Semantic distance between generations looks healthy. But we read fifty samples and they're recognisably the same sample wearing different nouns. Somewhere in training the model found one shape that scored well, and it has been producing that shape ever since, more and more confidently.
 
-There's a reason that shape tends to be the safe one. [Ethan Smith](https://www.ethansmith2000.com/post/the-mean-preference-is-a-bad-estimate-of-preferences) argues that a reward model built by averaging ratings across people ends up pointing somewhere nobody actually stands. When tastes genuinely conflict, and they do, the average of them is the middle, and the middle is what nobody loves and nobody objects to. The blandness isn't a defect in the reward model.
+There's a reason that shape tends to be the safe one. Ethan Smith, in [The Mean Preference Is a Bad Estimate of Preferences](https://www.ethansmith2000.com/post/the-mean-preference-is-a-bad-estimate-of-preferences), argues that a reward model built by averaging ratings across people ends up pointing somewhere nobody actually stands. When tastes genuinely conflict, and they do, the average of them is the middle, and the middle is what nobody loves and nobody objects to. The blandness isn't a defect in the reward model.
 
 The instinct is to blame the training. Wrong dataset, wrong hyperparameters, too many steps, not enough entropy at the end. So we tune. Raise the temperature, change the sampling, widen the data, and the model produces the same thing with more unusual word choices.
 
@@ -114,7 +114,7 @@ Three different places to intervene, then. Novelty search changes what selection
 
 There's a problem with the way we've described nature, and it's the one that survives everything above.
 
-[Ethan Smith](https://www.ethansmith2000.com/post/to-create-something-new-you-need-to-make-some-noise) made the point that this reading is too clean. Nature does have an objective: survive, reproduce. Nobody wrote it down, but it exists, and selection enforces it as ruthlessly as any fitness function. His framing: the objective in evolution is a function of competition and survival, and the conditions are constantly changing as the environment and the competitors for resources change.
+Ethan Smith, who writes about this in [To Create Something New, You Need to Make Some Noise](https://www.ethansmith2000.com/post/to-create-something-new-you-need-to-make-some-noise), made the point that this reading is too clean. Nature does have an objective: survive, reproduce. Nobody wrote it down, but it exists, and selection enforces it as ruthlessly as any fitness function. His framing: the objective in evolution is a function of competition and survival, and the conditions are constantly changing as the environment and the competitors for resources change.
 
 That's the part we'd skipped. What nature lacks isn't an objective, it's a fixed one. Survival is defined against an environment and a set of rivals, and both move. Get faster and the predator gets faster. Find an unexploited niche and it fills. The bar isn't set anywhere. It's set relative to everything else, and everything else is adapting too.
 
@@ -122,7 +122,7 @@ So a local optimum in nature has a short life. Whatever made something optimal w
 
 Which is a different diagnosis from the one we've been running. Not "the objective is the problem" but "the fixed objective is the problem". And it points somewhere else: at self-play, at adversarial setups, at anything where the thing scoring us improves as we improve.
 
-[POET's authors](https://arxiv.org/abs/1901.01753) got there first, and they don't think self-play goes far enough. In most coevolutionary systems, they note, the part of the environment that isn't the opponent stays fixed. The rival moves and the world doesn't. No amount of coevolution against a fixed task, they argue, produces something that can write poetry or invent mathematics. The environment itself has to change, and eventually the reward function with it.
+[POET](https://arxiv.org/abs/1901.01753) got there first, and its authors don't think self-play goes far enough. In most coevolutionary systems, they note, the part of the environment that isn't the opponent stays fixed. The rival moves and the world doesn't. No amount of coevolution against a fixed task, they argue, produces something that can write poetry or invent mathematics. The environment itself has to change, and eventually the reward function with it.
 
 ## What's Open
 
