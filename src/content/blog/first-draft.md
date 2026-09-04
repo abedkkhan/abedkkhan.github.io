@@ -8,6 +8,8 @@ tags: ["rl", "reward-hacking", "creativity", "evaluation"]
 
 ![Cover image: a nineteenth century academy hall, where dozens of students paint the same seated figure, beneath a wall of near identical accepted canvases from previous years](/blog/first-draft/cover.webp)
 
+## The Collapse
+
 Some things can be checked. A proof either holds or it doesn't. A program compiles or it fails. We can build a reward around these and trust it, because the target sits still while we aim at it.
 
 Creativity isn't like that. Neither is taste, or originality, or whatever we mean when we ask a model to produce something interesting. There's no test to run. And the strange part is that it isn't simply unverifiable. It's verifiable once. We can look at an output and say yes, that's fresh, that's unlike what came before. But the moment we've said it, the thing we were pointing at has moved. What was surprising becomes the reference point, and the bar for surprising sits somewhere else now. Verify it and we've spent it.
@@ -22,6 +24,8 @@ The instinct is to blame the training. Wrong dataset, wrong hyperparameters, too
 
 Eventually we notice the reward curve never stopped climbing. It went up the entire time the outputs were collapsing. That's the part worth sitting with. Nothing failed. The reward function did exactly what it was built to do, every step, and the result was a model that can't surprise us.
 
+## Deception
+
 There is a paper, [Abandoning Objectives: Evolution Through the Search for Novelty Alone](https://stars.library.ucf.edu/facultybib2010/1530/), and it names the failure precisely: deception. An objective encodes what the goal looks like and rewards resemblance to it. But resembling the goal and being on the route to it are different properties, and nothing makes them line up.
 
 Their example is a Chinese finger trap. Pulling the fingers apart is the direct move and it tightens the trap. The move that works is pushing them together, which looks like the opposite of progress. Any score built on how close the fingers are to free will penalise the only action that frees them.
@@ -35,3 +39,5 @@ So follow one of those intermediates through. It appears. It gets scored. It sco
 The route isn't something the search failed to find. It found it, repeatedly, and threw it out every time. And it threw it out correctly. Selection is supposed to remove lower-scoring candidates. That's the whole job. There's no malfunction anywhere in this, which is why tuning the training never helped: we were looking for a fault in a process that didn't have one.
 
 Deception isn't a property of the search method. It's a property of what we chose to score, and it survives whatever we optimise it with. Their conclusion: while it seems natural to blame the search algorithm when search fails to reach the objective, the problem may ultimately lie in the pursuit of the objective itself.
+
+## The Obvious Answer
