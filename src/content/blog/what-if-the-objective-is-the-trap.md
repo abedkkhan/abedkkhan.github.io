@@ -124,8 +124,6 @@ So a local optimum in nature is on a clock. Whatever made something optimal was 
 
 Which is a different diagnosis from the one we've been running. Not "the objective is the problem" but "the fixed objective is the problem". And it points somewhere else: at self-play, at adversarial setups, at anything where the thing scoring us improves as we improve.
 
-The title of this post is the position it took six sections to leave. The correction also re-reads them. Novelty search never removed the objective, it replaced it with one that moves, because what counts as novel is defined against what has already been found and that keeps growing. POET is the same move at a larger scale. Neither was the absence of a goal. Both were goals that refuse to hold still, which may be why they worked at all.
-
 [Wang and coauthors](https://arxiv.org/abs/1901.01753) got there first, and they don't think self-play goes far enough. In most coevolutionary systems, they note, the part of the environment that isn't the opponent stays fixed. The rival moves and the world doesn't. No amount of coevolution against a fixed task, they argue, produces something that can write poetry or invent mathematics. The environment itself has to change, and eventually the reward function with it.
 
 ## What's Open
@@ -136,6 +134,6 @@ The research here runs from 2011 to 2019. This isn't a survey of what's been bui
 
 What might help, for the creativity case specifically, is something that treats the reward as a thing with a shelf life. Not a better reward model, but a reward model that expects to be wrong shortly and has some mechanism for noticing. POET moves the problem. Self-play moves the opponent. Neither is obviously the right shape for taste, which moves for reasons that have nothing to do with an adversary and everything to do with exposure: the thing gets seen, and seeing it is what wears it out.
 
-Which points at something narrower than a better score. If a thing wears out by being seen, then part of what's worth rewarding is timing: being somewhere before it fills up. That's a property of the region, not of the output, and it isn't what a reward model is built to notice. Whether it could be trained into the weights rather than bolted on at sampling time is the part worth experimenting with.
+Which points at something narrower than a better score, and it brings back the exhaustion argument from earlier. Lehman and Stanley used it about simple behaviours: there are only so many ways to be simple, so a search demanding novelty runs out of them and has to go somewhere more complex. The same shape seems to apply to taste, except what gets used up isn't simplicity, it's whatever everyone has already found. If a thing wears out by being seen, then part of what's worth rewarding is timing: being somewhere before it fills up. That's a property of the region, not of the output, and it isn't what a reward model is built to notice. Whether it could be trained into the weights rather than bolted on at sampling time is the part worth experimenting with.
 
 If the target moves because measuring it moves it, then any fixed proxy is a photograph, and the question isn't how to take a better photograph. It's what we build instead.
