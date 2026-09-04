@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#ece5d4"/>
+      <stop offset="100%" stop-color="#ded5c0"/>
+    </linearGradient>
+
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#b3a184"/>
+      <stop offset="100%" stop-color="#8d7c62"/>
+    </linearGradient>
+
+    <marker id="tip" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5c4f3c"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="580" fill="url(#ground)"/>
+
+  <g font-family="'JetBrains Mono', 'Menlo', monospace">
+
+    <!-- the wide sample, drawn behind the landscape -->
+    <rect x="300" y="118" width="420" height="352" fill="#6b5b45" opacity="0.10"/>
+
+    <!-- the landscape: a thin spike, a flat stretch, then higher ground -->
+    <path d="M 60 432 C 160 424, 250 402, 330 386 L 420 190 L 470 380 L 520 378
+             C 600 376, 690 376, 770 372 C 868 366, 902 202, 980 170
+             C 1046 192, 1096 256, 1140 300 L 1140 470 L 60 470 Z"
+          fill="url(#hill)"/>
+    <path d="M 60 432 C 160 424, 250 402, 330 386 L 420 190 L 470 380 L 520 378
+             C 600 376, 690 376, 770 372 C 868 366, 902 202, 980 170
+             C 1046 192, 1096 256, 1140 300"
+          fill="none" stroke="#5c4f3c" stroke-width="2.5" stroke-linejoin="round"/>
+
+    <!-- the narrow sample, sitting squarely on the spike -->
+    <rect x="400" y="118" width="40" height="352" fill="#3a2f22" opacity="0.30"/>
+    <rect x="400" y="118" width="40" height="352" fill="none" stroke="#5c4f3c" stroke-width="1.2" opacity="0.7"/>
+
+    <!-- where the narrow search settles -->
+    <circle cx="420" cy="190" r="7" fill="#3a2f22"/>
+
+    <!-- baseline -->
+    <path d="M 60 470 L 1140 470" stroke="#a2967f" stroke-width="1.5"/>
+    <text x="60" y="104" font-size="16" fill="#7d7059">reward</text>
+
+    <!-- wide sample label -->
+    <path d="M 300 118 L 720 118" stroke="#5c4f3c" stroke-width="1.5"/>
+    <text x="510" y="106" font-size="19" fill="#3a2f22" text-anchor="middle">wide search</text>
+
+    <!-- narrow sample label -->
+    <path d="M 420 472 L 420 494" stroke="#5c4f3c" stroke-width="1.5"/>
+    <text x="420" y="516" font-size="19" fill="#3a2f22" text-anchor="middle">narrow search</text>
+
+    <!-- the wide sample is not held by the spike -->
+    <path d="M 730 330 C 810 320, 866 250, 928 192"
+          fill="none" stroke="#5c4f3c" stroke-width="2.5" stroke-linecap="round"
+          stroke-dasharray="3 9" marker-end="url(#tip)"/>
+
+    <text x="1140" y="552" font-size="17" fill="#6b5b45" text-anchor="end">a peak this thin is a sliver of a wide sample, so it doesn't hold one</text>
+  </g>
+</svg>
