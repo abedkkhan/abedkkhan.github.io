@@ -22,11 +22,11 @@ The instinct is to blame the training. Wrong dataset, wrong hyperparameters, too
 
 Eventually we notice the reward curve never stopped climbing. It went up the entire time the outputs were collapsing. That's the part worth sitting with. Nothing failed. The reward function did exactly what it was built to do, every step, and the result was a model that can't surprise us.
 
-![An immense architecture of stone staircases. One grand stair climbs flight after flight to a landing high in the air where figures stand as though they have arrived. Across the void another stair rises higher still, and the only way to reach its foot is to descend all the way to the floor of the hall.](/blog/first-draft/image_2.webp)
-
 There is a paper, [Abandoning Objectives: Evolution Through the Search for Novelty Alone](https://stars.library.ucf.edu/facultybib2010/1530/), and it names the failure precisely: deception. An objective encodes what the goal looks like and rewards resemblance to it. But resembling the goal and being on the route to it are different properties, and nothing makes them line up.
 
 Their example is a Chinese finger trap. Pulling the fingers apart is the direct move and it tightens the trap. The move that works is pushing them together, which looks like the opposite of progress. Any score built on how close the fingers are to free will penalise the only action that frees them.
+
+![An immense architecture of stone staircases. One grand stair climbs flight after flight to a landing high in the air where figures stand as though they have arrived. Across the void another stair rises higher still, and the only way to reach its foot is to descend all the way to the floor of the hall.](/blog/first-draft/image_2.webp)
 
 What makes this more than a puzzle is the generalisation: the objective function does not necessarily reward the stepping stones that lead to the objective. The intermediate states along the way often don't resemble the destination. Sometimes they resemble failure. And this is exactly what appears to be happening in a creativity finetune: an early draft of something genuinely unusual reads, to a reward model, as incoherent. Which is what it is. Coherence is what it acquires later.
 
