@@ -8,8 +8,6 @@ tags: ["rl", "reward-hacking", "creativity", "evaluation"]
 
 ![Cover image: a nineteenth century academy hall, where dozens of students paint the same seated figure, beneath a wall of near identical accepted canvases from previous years](/blog/first-draft/cover.webp)
 
-## The Collapse
-
 Some things can be checked. A proof either holds or it doesn't. A program compiles or it fails. We can build a reward around these and trust it, because the target sits still while we aim at it.
 
 Creativity isn't like that. Neither is taste, or originality, or whatever we mean when we ask a model to produce something interesting. There's no test to run. And the strange part is that it isn't simply unverifiable. It's verifiable once. We can look at an output and say yes, that's fresh, that's unlike what came before. But the moment we've said it, the thing we were pointing at has moved. What was surprising becomes the reference point, and the bar for surprising sits somewhere else now. Verify it and we've spent it.
