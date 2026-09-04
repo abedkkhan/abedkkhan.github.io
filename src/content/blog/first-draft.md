@@ -30,6 +30,8 @@ Their example is a Chinese finger trap. Pulling the fingers apart is the direct 
 
 What makes this more than a puzzle is the generalisation: the objective function does not necessarily reward the stepping stones that lead to the objective. The intermediate states along the way often don't resemble the destination. Sometimes they resemble failure. And this is exactly what appears to be happening in a creativity finetune: an early draft of something genuinely unusual reads, to a reward model, as incoherent. Which is what it is. Coherence is what it acquires later.
 
+![An immense architecture of stone staircases. One grand stair climbs flight after flight to a landing high in the air where figures stand as though they have arrived. Across the void another stair rises higher still, and the only way to reach its foot is to descend all the way to the floor of the hall.](/blog/first-draft/image_2.webp)
+
 So follow one of those intermediates through. It appears. It gets scored. It scores below what we already have, so selection discards it: that step, before it produces anything, before it can show what it was a step toward. Next round the same thing appears and is discarded again.
 
 The route isn't something the search failed to find. It found it, repeatedly, and threw it out every time. And it threw it out correctly. Selection is supposed to remove lower-scoring candidates. That's the whole job. There's no malfunction anywhere in this, which is why tuning the training never helped: we were looking for a fault in a process that didn't have one.
