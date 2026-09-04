@@ -2,7 +2,7 @@
 title: "First Draft"
 description: "On finetuning for creativity: the target we can only verify once, the proxy we optimize instead, and a reward curve that keeps climbing while the outputs collapse."
 pubDate: 2026-09-04
-readTime: "14 min read"
+readTime: "15 min read"
 tags: ["rl", "reward-hacking", "creativity", "evaluation"]
 ---
 
@@ -98,6 +98,8 @@ The setup: instead of fixing an environment and optimising an agent against it, 
 
 So there is no single problem being climbed. The reward function itself doesn't change, and it is the same one in every environment POET builds. What changes is the world it gets computed in. There's a growing population of problems, each with its own agent, and the whole thing keeps producing harder versions of itself. The paper's phrase for what these become is stepping stones, the same word from the 2011 paper eight years later, now describing solutions to intermediate problems that turn out to matter for problems generated later.
 
+Run ES directly on one of the environments POET built and solved, and it scores between 13 and 40 against a threshold of 230. The failure is a familiar one. The agents learn to move forward, and then they learn to freeze in front of an obstacle, because falling costs a hundred points and standing still costs almost nothing. The reward stays positive the whole time. The behaviour has collapsed into one shape.
+
 That transfer step is the mechanism worth taking. A solution that has plateaued on its own environment isn't discarded; it's tested somewhere else, where it might be exactly what's needed. The paper calls this goal switching, and it is how POET gets out of local optima. We escape the trap by changing which problem we're solving, not by climbing harder within it.
 
 Which is a different escape from novelty search's. Novelty search refuses to repeat. POET makes repetition pointless by ensuring the problem we succeeded at is no longer the problem in front of us.
@@ -115,3 +117,7 @@ That's the part we'd skipped. What nature lacks isn't an objective, it's a fixed
 So a local optimum in nature has a short life. Whatever made something optimal was optimal against conditions that no longer hold. Nothing has to climb out of the trap. The trap dissolves underneath it.
 
 Which is a different diagnosis from the one we've been running. Not "the objective is the problem" but "the fixed objective is the problem". And it points somewhere else: at self-play, at adversarial setups, at anything where the thing scoring us improves as we improve.
+
+[POET's authors](https://arxiv.org/abs/1901.01753) got there first, and they don't think self-play goes far enough. In most coevolutionary systems, they note, the part of the environment that isn't the opponent stays fixed. The rival moves and the world doesn't. No amount of coevolution against a fixed task, they argue, produces something that can write poetry or invent mathematics. The environment itself has to change, and eventually the reward function with it.
+
+Which is where this stops. That last clause, the reward function moving too, is future work in their own paper. Everything above points at it and none of it gets there.
