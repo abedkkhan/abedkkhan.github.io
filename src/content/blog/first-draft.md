@@ -2,7 +2,7 @@
 title: "First Draft"
 description: "On finetuning for creativity: the target we can only verify once, the proxy we optimize instead, and a reward curve that keeps climbing while the outputs collapse."
 pubDate: 2026-09-04
-readTime: "12 min read"
+readTime: "14 min read"
 tags: ["rl", "reward-hacking", "creativity", "evaluation"]
 ---
 
@@ -89,6 +89,20 @@ That produced roughly four times the previous best on Montezuma's Revenge, a ben
 Note what novelty search actually changed. Not the loop: same population, same mutation, same selection. Only the input to selection, from how close a candidate came to the goal to how unlike everything already seen it was.
 
 Which settles what the result is evidence for. Not that evolutionary search is better, since it is the same search. The objective was doing the trapping. Remove the pull toward a goal and the traps stop being traps, not because we climb out of them but because nothing is holding us there.
+
+## Widening the Knob
+
+[POET](https://arxiv.org/abs/1901.01753) is the one that moves the knob.
+
+The setup: instead of fixing an environment and optimising an agent against it, generate environments too. Terrain gets mutated into new terrain, agents train on it, and solutions transfer between pairs, which is the part that matters. An agent that got good on one landscape gets tried on another, and if it does better there, it takes over.
+
+So there is no single problem being climbed. The reward function itself doesn't change, and it is the same one in every environment POET builds. What changes is the world it gets computed in. There's a growing population of problems, each with its own agent, and the whole thing keeps producing harder versions of itself. The paper's phrase for what these become is stepping stones, the same word from the 2011 paper eight years later, now describing solutions to intermediate problems that turn out to matter for problems generated later.
+
+That transfer step is the mechanism worth taking. A solution that has plateaued on its own environment isn't discarded; it's tested somewhere else, where it might be exactly what's needed. The paper calls this goal switching, and it is how POET gets out of local optima. We escape the trap by changing which problem we're solving, not by climbing harder within it.
+
+Which is a different escape from novelty search's. Novelty search refuses to repeat. POET makes repetition pointless by ensuring the problem we succeeded at is no longer the problem in front of us.
+
+Three different places to intervene, then. Novelty search changes what selection reads. Go-Explore changes where the search begins and leaves the objective untouched. POET keeps the objective and multiplies the problems it gets applied to. The design space was never a switch.
 
 ## The Objection
 
