@@ -6,7 +6,7 @@ readTime: "16 min read"
 tags: ["rl", "reward-hacking", "creativity", "evaluation"]
 ---
 
-![Cover image: a nineteenth century academy hall, where dozens of students paint the same seated figure, beneath a wall of near identical accepted canvases from previous years](/blog/first-draft/cover.webp)
+![Cover image: a nineteenth century academy hall, where dozens of students paint the same seated figure, beneath a wall of near identical accepted canvases from previous years](/blog/what-if-the-objective-is-the-trap/cover.webp)
 
 Some things can be checked. A proof either holds or it doesn't. A program compiles or it fails. We can build a reward around these and trust it, because the target sits still while we aim at it.
 
@@ -28,7 +28,7 @@ There is a paper by Joel Lehman and Kenneth Stanley, [Abandoning Objectives: Evo
 
 Their example is a Chinese finger trap. Pulling the fingers apart is the direct move and it tightens the trap. The move that works is pushing them together, which looks like the opposite of progress. Any score built on how close the fingers are to free will penalise the only action that frees them.
 
-![A stylised architectural interior. Three figures stand on a cantilevered platform that juts out into empty air and goes no further, reached by a stair climbing from below. Behind them a far larger staircase rises away to the right, and the only route to its foot leads back down through the flights below.](/blog/first-draft/image_2.webp)
+![A stylised architectural interior. Three figures stand on a cantilevered platform that juts out into empty air and goes no further, reached by a stair climbing from below. Behind them a far larger staircase rises away to the right, and the only route to its foot leads back down through the flights below.](/blog/what-if-the-objective-is-the-trap/image_2.webp)
 
 What makes this more than a puzzle is the generalisation: the objective function does not necessarily reward the stepping stones that lead to the objective. The intermediate states along the way often don't resemble the destination. Sometimes they resemble failure. And this is exactly what appears to be happening in a creativity finetune: an early draft of something genuinely unusual reads, to a reward model, as incoherent. Which is what it is. Coherence is what it acquires later.
 
@@ -76,7 +76,7 @@ There's a natural objection: even if ES optimises the same objective, it searche
 
 [Zhang, Clune and Stanley](https://arxiv.org/abs/1712.06564) found ES tracks gradient descent more closely than expected: its gradient estimate is poor, but poor turns out to be sufficient. [Lehman, Chen, Clune and Stanley](https://arxiv.org/abs/1712.06568) then showed this holds only when the search distribution is narrow. Widen it and ES starts optimising over a region of parameter space rather than a point, which gives it something the gradient doesn't have: it can cross a flat stretch with no signal in it, and it can pass over a narrow peak without being caught, because a wide enough search doesn't register a narrow trap as a trap.
 
-![A reward landscape with a tall narrow spike on the left and a broad higher hill on the right. A narrow search sits squarely on the spike and settles there. A wide search spans the spike and the flat ground beyond it, and carries on toward the higher hill, because a peak that thin is only a sliver of a wide sample.](/blog/first-draft/image_3.svg)
+![A reward landscape with a tall narrow spike on the left and a broad higher hill on the right. A narrow search sits squarely on the spike and settles there. A wide search spans the spike and the flat ground beyond it, and carries on toward the higher hill, because a peak that thin is only a sliver of a wide sample.](/blog/what-if-the-objective-is-the-trap/image_3.svg)
 
 That's a genuine escape from some deceptions. But it costs us others: the same work shows wide search failing where a narrow path has to be followed precisely. We're trading which traps catch us, not leaving the landscape that produces them. Deception is still a property of what we chose to score.
 
