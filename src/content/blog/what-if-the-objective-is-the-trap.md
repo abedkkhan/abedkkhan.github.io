@@ -116,7 +116,7 @@ Three different places to intervene, then. Novelty search changes what selection
 
 There's a problem with the way we've described nature, and it's the one that survives everything above.
 
-Ethan Smith, who writes about this in [To Create Something New, You Need to Make Some Noise](https://www.ethansmith2000.com/post/to-create-something-new-you-need-to-make-some-noise), made the point that this reading is too clean. Nature does have an objective: survive, reproduce. Nobody wrote it down, but it exists, and selection enforces it as ruthlessly as any fitness function. His framing: the objective in evolution is a function of competition and survival, and the conditions are constantly changing as the environment and the competitors for resources change.
+Ethan Smith made the point, in conversation, that this reading is too clean. Nature does have an objective: survive, reproduce. Nobody wrote it down, but it exists, and selection enforces it as ruthlessly as any fitness function. His framing: the objective in evolution is a function of competition and survival, and the conditions are constantly changing as the environment and the competitors for resources change.
 
 That's the part we'd skipped. What nature lacks isn't an objective, it's a fixed one. Survival is defined against an environment and a set of rivals, and both move. Get faster and the predator gets faster. Find an unexploited niche and it fills. The bar isn't set anywhere. It's set relative to everything else, and everything else is adapting too.
 
