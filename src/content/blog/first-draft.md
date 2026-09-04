@@ -2,7 +2,7 @@
 title: "First Draft"
 description: "On finetuning for creativity: the target we can only verify once, the proxy we optimize instead, and a reward curve that keeps climbing while the outputs collapse."
 pubDate: 2026-09-04
-readTime: "8 min read"
+readTime: "9 min read"
 tags: ["rl", "reward-hacking", "creativity", "evaluation"]
 ---
 
@@ -71,3 +71,9 @@ Most of the field takes the easy half. [Salimans and coauthors](https://arxiv.or
 What it doesn't do is remove the choice. Novelty search still needs someone to say what counts as different, and that description of behaviour is as much a human decision as a fitness function is. In a maze it's obvious: where the robot ended up. In a creativity finetune nothing is obvious. Whatever axis we pick, the model finds the cheapest way to be different along it. If that axis is embedding distance, the cheap answer is presumably to scatter. If it's vocabulary, the cheap answer starts to look like unusual word choices over the same shape, which is where we came in.
 
 So an evolutionary algorithm on a deceptive objective is deceived. It has the population, it has the mutation, and it will use them to climb the same misleading landscape and settle on the same local optimum. It may see more of the space on the way there. That is worth something, and it isn't the thing we needed.
+
+There's a natural objection: even if ES optimises the same objective, it searches differently, so perhaps it lands somewhere different. The answer is a qualified yes, and the qualification matters.
+
+[Zhang, Clune and Stanley](https://arxiv.org/abs/1712.06564) found ES tracks gradient descent more closely than expected: its gradient estimate is poor, but poor turns out to be sufficient. [Lehman, Chen, Clune and Stanley](https://arxiv.org/abs/1712.06568) then showed this holds only when the search distribution is narrow. Widen it and ES starts optimising over a region of parameter space rather than a point, which gives it something the gradient doesn't have: it can cross a flat stretch with no signal in it, and it can pass over a narrow peak without being caught, because a wide enough search doesn't register a narrow trap as a trap.
+
+That's a genuine escape from some deceptions. But it costs us others: the same work shows wide search failing where a narrow path has to be followed precisely. We're trading which traps catch us, not leaving the landscape that produces them. Deception is still a property of what we chose to score.
