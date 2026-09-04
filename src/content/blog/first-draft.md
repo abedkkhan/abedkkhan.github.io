@@ -1,5 +1,5 @@
 ---
-title: "First Draft"
+title: "What If the Objective Is the Trap"
 description: "On finetuning for creativity: the target we can only verify once, the proxy we optimize instead, and a reward curve that keeps climbing while the outputs collapse."
 pubDate: 2026-09-04
 readTime: "16 min read"
