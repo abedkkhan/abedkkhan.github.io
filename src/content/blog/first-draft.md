@@ -2,7 +2,7 @@
 title: "First Draft"
 description: "On finetuning for creativity: the target we can only verify once, the proxy we optimize instead, and a reward curve that keeps climbing while the outputs collapse."
 pubDate: 2026-09-04
-readTime: "2 min read"
+readTime: "4 min read"
 tags: ["rl", "reward-hacking", "creativity", "evaluation"]
 ---
 
@@ -21,3 +21,19 @@ Not worse in any way the numbers can see. On the benchmark everything is fine. D
 The instinct is to blame the training. Wrong dataset, wrong hyperparameters, too many steps, not enough entropy at the end. So we tune. Raise the temperature, change the sampling, widen the data, and the model produces the same thing with more unusual word choices.
 
 Eventually we notice the reward curve never stopped climbing. It went up the entire time the outputs were collapsing. That's the part worth sitting with. Nothing failed. The reward function did exactly what it was built to do, every step, and the result was a model that can't surprise us.
+
+What was hard to place was why the collapse felt so orderly. Nothing about it looked like a bug. It looked like the system succeeding at something, just not the thing we asked for.
+
+The best account of this isn't in ML. It's a 2011 paper by Joel Lehman and Kenneth Stanley about evolutionary algorithms, and it names the failure precisely: deception. An objective encodes what the goal looks like and rewards resemblance to it. But resembling the goal and being on the route to it are different properties, and nothing makes them line up.
+
+Their example is a Chinese finger trap. Pulling the fingers apart is the direct move and it tightens the trap. The move that works is pushing them together, which looks like the opposite of progress. Any score built on how close the fingers are to free will penalise the only action that frees them.
+
+What makes this more than a puzzle is the generalisation: the objective function does not necessarily reward the stepping stones that lead to the objective. The intermediate states along the way often don't resemble the destination. Sometimes they resemble failure. And this is exactly what appears to be happening in a creativity finetune: an early draft of something genuinely unusual reads, to a reward model, as incoherent. Which is what it is. Coherence is what it acquires later.
+
+So follow one of those intermediates through. It appears. It gets scored. It scores below what we already have, so selection discards it: that step, before it produces anything, before it can show what it was a step toward. Next round the same thing appears and is discarded again.
+
+The route isn't something the search failed to find. It found it, repeatedly, and threw it out every time. And it threw it out correctly. Selection is supposed to remove lower-scoring candidates. That's the whole job. There's no malfunction anywhere in this, which is why tuning the training never helped: we were looking for a fault in a process that didn't have one.
+
+Lehman and Stanley go further than we would have. They tried the standard remedies, curricula and incremental objectives and diversity maintenance, and concluded none of them address the underlying pathology. Deception isn't a property of the search method. It's a property of what we chose to score, and it survives whatever we optimise it with.
+
+Their conclusion is the line that keeps coming back: while it seems natural to blame the search algorithm when search fails to reach the objective, the problem may ultimately lie in the pursuit of the objective itself.
