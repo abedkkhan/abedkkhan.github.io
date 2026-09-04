@@ -92,9 +92,9 @@ That produced roughly four times the previous best on Montezuma's Revenge, a ben
 
 ## One Change
 
-Note what novelty search actually changed. Not the loop: same population, same mutation, same selection. Only the input to selection, from how close a candidate came to the goal to how unlike everything already seen it was.
+Note what novelty search actually changed. Not the loop: same population, same mutation, same rule of keeping whatever scores highest. Only the score itself, from how close a candidate came to the goal to how unlike anything seen before it was.
 
-Which settles what the result is evidence for. Not that evolutionary search is better, since it is the same search. The objective was doing the trapping. Remove the pull toward a goal and the traps stop being traps, not because we climb out of them but because nothing is holding us there.
+Which settles what the maze result is evidence for. Not that evolutionary search is better, since it is the same search. The objective was doing the trapping. Remove the pull toward a goal and the traps stop being traps, not because we climb out of them but because nothing is holding us there.
 
 ## Widening the Knob
 
