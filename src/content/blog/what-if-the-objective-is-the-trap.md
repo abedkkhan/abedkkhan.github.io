@@ -72,6 +72,8 @@ Much of what gets built takes the easy half. [Evolution Strategies as a Scalable
 
 [Lehman and Stanley](https://stars.library.ucf.edu/facultybib2010/1530/) take the hard half, and it is the point of their paper. Novelty search abandons the objective outright. Nothing is scored on how close it is to a goal. Candidates are kept for being unlike everything found so far, measured against an archive of the behaviours that were new when they appeared, and in their experiments the maze gets solved by a population that was never told where the exit was. So the absence of a goal is not impossible to copy. It has been done.
 
+Which narrows what that result is evidence for. Not that evolutionary search is better, since it is the same search: same population, same mutation, same rule of keeping whatever scores highest. Only the score changed. The objective was doing the trapping, and once the pull toward a goal is gone the traps stop being traps, not because anything climbs out of them but because nothing is holding it there.
+
 What it doesn't do is remove the choice. Novelty search still needs someone to say what counts as different, and that description of behaviour is as much a human decision as a fitness function is. In a maze it's obvious: where the robot ended up. In a creativity finetune nothing is obvious. Whatever axis we pick is an axis the model can be cheaply different along. If that axis is embedding distance, the cheap answer is presumably to scatter. If it's vocabulary, the cheap answer starts to look like unusual word choices over the same shape, which is where we came in.
 
 Back to the ordinary case. An evolutionary algorithm on a deceptive objective is deceived. It has the population, it has the mutation, and it will use them to climb the same misleading landscape toward the same kind of local optimum. It may see more of the space on the way there. That is worth something, and it isn't the thing we needed.
@@ -89,12 +91,6 @@ That's a genuine escape from some deceptions. But it costs us others: the same w
 [Go-Explore](https://arxiv.org/abs/1901.10995), from Ecoffet and coauthors, is worth pausing on, because it cuts against all of this. It changes nothing about the reward and takes whatever the environment provides. What it changes is where an episode begins. The paper names two failures: detachment, where the reward that led to a promising place has already been spent, so nothing points back to it, and derailment, where it tries to explore on the way back and never arrives. The fix is an archive and a rule: return to a stored state deliberately, without exploring en route, and only then explore. The agent isn't smarter. It isn't allowed to forget, and it isn't allowed to wander on the way back.
 
 That produced roughly four times the previous best on Montezuma's Revenge, an Atari game that became the benchmark for hard exploration. Pure mechanics, no objective touched. But notice what kind of hard Montezuma is. The reward is sparse and silent for long stretches, and it isn't lying. Nothing the game means to reward scores a bad state highly. The problem is reaching the states the reward already values, which is a different thing from a reward model that confidently prefers the bland completion. No amount of better exploring fixes the second. We would only be finding more efficient routes to the wrong place.
-
-## One Change
-
-Note what novelty search actually changed. Not the loop: same population, same mutation, same rule of keeping whatever scores highest. Only the score itself, from how close a candidate came to the goal to how unlike anything seen before it was.
-
-Which narrows what the maze result is evidence for. Not that evolutionary search is better, since it is the same search. The objective was doing the trapping. Remove the pull toward a goal and the traps stop being traps, not because we climb out of them but because nothing is holding us there.
 
 ## Widening the Knob
 
