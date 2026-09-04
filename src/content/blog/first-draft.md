@@ -24,7 +24,7 @@ Eventually we notice the reward curve never stopped climbing. It went up the ent
 
 What was hard to place was why the collapse felt so orderly. Nothing about it looked like a bug. It looked like the system succeeding at something, just not the thing we asked for.
 
-The best account of this isn't in ML. It's a [2011 paper](https://stars.library.ucf.edu/cgi/viewcontent.cgi?article=2529&context=facultybib2010) by Joel Lehman and Kenneth Stanley about evolutionary algorithms, and it names the failure precisely: deception. An objective encodes what the goal looks like and rewards resemblance to it. But resembling the goal and being on the route to it are different properties, and nothing makes them line up.
+There is a paper, [Abandoning Objectives: Evolution Through the Search for Novelty Alone](https://stars.library.ucf.edu/cgi/viewcontent.cgi?article=2529&context=facultybib2010), and it names the failure precisely: deception. An objective encodes what the goal looks like and rewards resemblance to it. But resembling the goal and being on the route to it are different properties, and nothing makes them line up.
 
 Their example is a Chinese finger trap. Pulling the fingers apart is the direct move and it tightens the trap. The move that works is pushing them together, which looks like the opposite of progress. Any score built on how close the fingers are to free will penalise the only action that frees them.
 
