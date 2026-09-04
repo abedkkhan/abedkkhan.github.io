@@ -79,3 +79,9 @@ There's a natural objection: even if ES optimises the same objective, it searche
 ![A reward landscape with a tall narrow spike on the left and a broad higher hill on the right. A narrow search sits squarely on the spike and settles there. A wide search spans the spike and the flat ground beyond it, and carries on toward the higher hill, because a peak that thin is only a sliver of a wide sample.](/blog/first-draft/image_3.svg)
 
 That's a genuine escape from some deceptions. But it costs us others: the same work shows wide search failing where a narrow path has to be followed precisely. We're trading which traps catch us, not leaving the landscape that produces them. Deception is still a property of what we chose to score.
+
+## One Change
+
+Note what novelty search actually changed. Not the loop: same population, same mutation, same selection. Only the input to selection, from how close a candidate came to the goal to how unlike everything already seen it was.
+
+Which settles what the result is evidence for. Not that evolutionary search is better, since it is the same search. The objective was doing the trapping. Remove the pull toward a goal and the traps stop being traps, not because we climb out of them but because nothing is holding us there.
