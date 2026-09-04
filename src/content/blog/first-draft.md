@@ -2,7 +2,7 @@
 title: "First Draft"
 description: "On finetuning for creativity: the target we can only verify once, the proxy we optimize instead, and a reward curve that keeps climbing while the outputs collapse."
 pubDate: 2026-09-04
-readTime: "9 min read"
+readTime: "11 min read"
 tags: ["rl", "reward-hacking", "creativity", "evaluation"]
 ---
 
@@ -85,3 +85,15 @@ That's a genuine escape from some deceptions. But it costs us others: the same w
 Note what novelty search actually changed. Not the loop: same population, same mutation, same selection. Only the input to selection, from how close a candidate came to the goal to how unlike everything already seen it was.
 
 Which settles what the result is evidence for. Not that evolutionary search is better, since it is the same search. The objective was doing the trapping. Remove the pull toward a goal and the traps stop being traps, not because we climb out of them but because nothing is holding us there.
+
+## The Objection
+
+There's a problem with the way we've described nature, and it's the one that survives everything above.
+
+[Ethan Smith](https://www.ethansmith2000.com/post/to-create-something-new-you-need-to-make-some-noise) made the point that this reading is too clean. Nature does have an objective: survive, reproduce. Nobody wrote it down, but it exists, and selection enforces it as ruthlessly as any fitness function. His framing: the objective in evolution is a function of competition and survival, and the conditions are constantly changing as the environment and the competitors for resources change.
+
+That's the part we'd skipped. What nature lacks isn't an objective, it's a fixed one. Survival is defined against an environment and a set of rivals, and both move. Get faster and the predator gets faster. Find an unexploited niche and it fills. The bar isn't set anywhere. It's set relative to everything else, and everything else is adapting too.
+
+So a local optimum in nature has a short life. Whatever made something optimal was optimal against conditions that no longer hold. Nothing has to climb out of the trap. The trap dissolves underneath it.
+
+Which is a different diagnosis from the one we've been running. Not "the objective is the problem" but "the fixed objective is the problem". And it points somewhere else: at self-play, at adversarial setups, at anything where the thing scoring us improves as we improve.
