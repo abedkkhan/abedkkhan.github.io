@@ -98,17 +98,17 @@ Which settles what the maze result is evidence for. Not that evolutionary search
 
 ## Widening the Knob
 
-[POET](https://arxiv.org/abs/1901.01753), from Wang and coauthors, is the one that moves the knob.
+So far the choice has looked binary: keep the objective or drop it. There is a third setting, and [POET](https://arxiv.org/abs/1901.01753), from Wang and coauthors, is where it shows up.
 
-The setup: instead of fixing an environment and optimising an agent against it, generate environments too. Terrain gets mutated into new terrain, agents train on it, and solutions transfer between pairs, which is the part that matters. An agent that got good on one landscape gets tried on another, and if it does better there, it takes over.
+The domain is a two-legged robot learning to cross broken ground. Instead of fixing one obstacle course and training an agent against it, POET keeps generating new courses by mutating the old ones, trains an agent on each, and then periodically tries every agent on every other agent's course. If an agent does better somewhere other than where it was raised, it takes over there. That last step is the part that matters.
 
-So there is no single problem being climbed. The reward function itself doesn't change, and it is the same one in every environment POET builds. What changes is the world it gets computed in. There's a growing population of problems, each with its own agent, and the whole thing keeps producing harder versions of itself. The paper's phrase for what these become is stepping stones, the same word from the 2011 paper eight years later, now describing solutions to intermediate problems that turn out to matter for problems generated later.
+So there is no single problem being climbed. The reward function itself doesn't change, and it is the same one in every environment POET builds. What changes is the world it gets computed in. There's a growing population of problems, each with its own agent, and the whole thing keeps producing harder versions of itself. The paper's phrase for what these become is stepping stones, the same word Lehman and Stanley used eight years earlier, now describing solutions to intermediate problems that turn out to matter for problems generated later.
 
-Run ES directly on one of the environments POET built and solved, and it scores between 13 and 40 against a threshold of 230. The failure is a familiar one. The agents learn to move forward, and then they learn to freeze in front of an obstacle, because falling costs a hundred points and standing still costs almost nothing. The reward stays positive the whole time. The behaviour has collapsed into one shape.
+Run evolution strategies directly on one of the environments POET built and solved, and they get a small fraction of the score that counts as solving it. The failure is a familiar one. The agents learn to move forward, and then they learn to freeze in front of an obstacle, because falling costs a hundred points and standing still costs almost nothing. The reward stays positive the whole time. The behaviour has collapsed into one shape.
 
 That transfer step is the mechanism worth taking. A solution that has plateaued on its own environment isn't discarded; it's tested somewhere else, where it might be exactly what's needed. The paper calls this goal switching, and it is how POET gets out of local optima. We escape the trap by changing which problem we're solving, not by climbing harder within it.
 
-Which is a different escape from novelty search's. Novelty search refuses to repeat. POET makes repetition pointless by ensuring the problem we succeeded at is no longer the problem in front of us.
+Which is a different escape from novelty search's. Novelty search refuses to repeat. POET makes repetition pointless, because the problem we succeeded at is no longer the only problem in front of us.
 
 Three different places to intervene, then. Novelty search changes what selection reads. Go-Explore changes where the search begins and leaves the objective untouched. POET keeps the objective and multiplies the problems it gets applied to. The design space was never a switch.
 
