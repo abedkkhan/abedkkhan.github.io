@@ -38,7 +38,7 @@ So follow one of those intermediates through. It appears. It gets scored. It sco
 
 The route isn't something the search failed to find. It found it, repeatedly, and threw it out every time. And it threw it out correctly. Selection is supposed to remove lower-scoring candidates. That's the whole job. There's no malfunction anywhere in this, which would explain why tuning the training never helped: we were looking for a fault in a process that didn't have one.
 
-Deception isn't a property of the search method. It's a property of what we chose to score, and it outlives most of what we throw at it. Their conclusion: while it seems natural to blame the search algorithm when search fails to reach the objective, the problem may ultimately lie in the pursuit of the objective itself.
+Their conclusion: while it seems natural to blame the search algorithm when search fails to reach the objective, the problem may ultimately lie in the pursuit of the objective itself. Which is the same thing from the other end. Deception isn't a property of the search method. It's a property of what we chose to score, and it outlives most of what we throw at it.
 
 ## The Obvious Answer
 
@@ -118,9 +118,13 @@ That's the part we'd skipped. What nature lacks isn't an objective, it's a fixed
 
 So a local optimum in nature is on a clock. Whatever made something optimal was optimal against conditions that no longer hold. Nothing has to climb out of the trap. The trap dissolves underneath it.
 
+![A suit of full plate armour on its stand in a great hall, undamaged and beautifully made, the end point of centuries of steady improvement. On the table beside it lies a firearm. The armour has not failed at anything. The conditions it was built against have stopped holding.](/blog/what-if-the-objective-is-the-trap/image_5.webp)
+
 Which is a different diagnosis from the one we've been running. Not "the objective is the problem" but "the fixed objective is the problem". And it points somewhere else: at self-play, at adversarial setups, at anything where the thing scoring us improves as we improve.
 
 [Wang and coauthors](https://arxiv.org/abs/1901.01753) got there first, and they don't think self-play goes far enough. In most coevolutionary systems, they note, the part of the environment that isn't the opponent stays fixed. The rival moves and the world doesn't. No amount of coevolution against a fixed task, they argue, produces something that can write poetry or invent mathematics. The environment itself has to change, and eventually the reward function with it.
+
+So the correction runs further than it first looked. It isn't enough for the objective to move. Whatever it is defined against has to move too, and that is a harder thing to build than an opponent.
 
 ## What's Open
 
