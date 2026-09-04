@@ -26,7 +26,7 @@ There is a paper, [Abandoning Objectives: Evolution Through the Search for Novel
 
 Their example is a Chinese finger trap. Pulling the fingers apart is the direct move and it tightens the trap. The move that works is pushing them together, which looks like the opposite of progress. Any score built on how close the fingers are to free will penalise the only action that frees them.
 
-![An immense architecture of stone staircases. One grand stair climbs flight after flight to a landing high in the air where figures stand as though they have arrived. Across the void another stair rises higher still, and the only way to reach its foot is to descend all the way to the floor of the hall.](/blog/first-draft/image_2.webp)
+![A stylised architectural interior. Three figures stand on a cantilevered platform that juts out into empty air and goes no further, reached by a stair climbing from below. Behind them a far larger staircase rises away to the right, and the only route to its foot leads back down through the flights below.](/blog/first-draft/image_2.webp)
 
 What makes this more than a puzzle is the generalisation: the objective function does not necessarily reward the stepping stones that lead to the objective. The intermediate states along the way often don't resemble the destination. Sometimes they resemble failure. And this is exactly what appears to be happening in a creativity finetune: an early draft of something genuinely unusual reads, to a reward model, as incoherent. Which is what it is. Coherence is what it acquires later.
 
