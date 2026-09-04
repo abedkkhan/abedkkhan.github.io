@@ -6,7 +6,7 @@ readTime: "2 min read"
 tags: ["rl", "reward-hacking", "creativity", "evaluation"]
 ---
 
-![Cover image: a reward curve climbing while sampled outputs collapse into one shape](/blog/first-draft/cover.svg)
+![Cover image: a nineteenth century academy hall, where dozens of students paint the same seated figure, beneath a wall of near identical accepted canvases from previous years](/blog/first-draft/cover.webp)
 
 Some things can be checked. A proof either holds or it doesn't. A program compiles or it fails. We can build a reward around these and trust it, because the target sits still while we aim at it.
 
