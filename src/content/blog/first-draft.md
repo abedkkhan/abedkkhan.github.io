@@ -2,7 +2,7 @@
 title: "First Draft"
 description: "On finetuning for creativity: the target we can only verify once, the proxy we optimize instead, and a reward curve that keeps climbing while the outputs collapse."
 pubDate: 2026-09-04
-readTime: "4 min read"
+readTime: "6 min read"
 tags: ["rl", "reward-hacking", "creativity", "evaluation"]
 ---
 
@@ -39,3 +39,17 @@ The route isn't something the search failed to find. It found it, repeatedly, an
 Deception isn't a property of the search method. It's a property of what we chose to score, and it survives whatever we optimise it with. Their conclusion: while it seems natural to blame the search algorithm when search fails to reach the objective, the problem may ultimately lie in the pursuit of the objective itself.
 
 ## The Obvious Answer
+
+If the objective is the problem, the obvious question is whether anything has ever searched without one.
+
+Something has. Evolution ran for roughly four billion years with no goal specified anywhere. Nothing was aiming at eyes, or flight, or us. There was no fitness function in the sense we mean it. In biology, fitness isn't a target handed to an organism, it's a tally of who happened to leave descendants, counted afterward. It describes an outcome. It doesn't direct anything.
+
+And that undirected process produced more genuine novelty than any designed search we've built. It couldn't get permanently stuck, because there was nothing to get stuck on: no peak that stayed optimal, no single measure everything was climbing. It just kept generating variation, and complexity accumulated as a byproduct.
+
+There's an argument for why complexity shows up at all without anything selecting for it. Life started simple because it couldn't start any other way, and there's a floor below simple but no ceiling above complex. So undirected variation drifts outward over time, not because anything is pulling it, but because there's only one direction with room in it. Lehman and Stanley cite this reading (a growing if contested one in biology, that the rise in complexity is a passive force rather than a selected one) and add a step: there are only so many ways to be simple. A search that keeps demanding novelty runs out of simple options and ends up somewhere complex, having been pushed there by nothing but exhaustion.
+
+Lehman and Stanley make the same observation from the other side. They note a view in biology that the drive toward complexity isn't primarily driven by selection at all: that selection can actively suppress it, because if selection pressure is too high, any deviation from a locally optimal behaviour gets filtered out. The same mechanism, running too hard, removes the things that would have led somewhere.
+
+Which gives a clean line: the objective is the trap, nature had no objective, so the escape route is to be more like evolution.
+
+The line doesn't hold.
