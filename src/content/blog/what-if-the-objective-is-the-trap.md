@@ -128,10 +128,12 @@ Which is a different diagnosis from the one we've been running. Not "the objecti
 
 ## What's Open
 
-We don't have the resolution.
+We don't have the answer.
 
-The papers here run from 2011 to 2019. This isn't a survey of what's been built since, and it's likely parts of this have been addressed in ways worth knowing about. But the distinction survives regardless of what's been solved, because it isn't a claim about the state of the art. It's a claim about where an intervention sits, and most of what gets reached for when outputs collapse sits in the wrong place.
+The research here runs from 2011 to 2019. This isn't a survey of what's been built since, and it's likely parts of this have been addressed in ways worth knowing about. But the distinction survives regardless of what's been solved, because it isn't a claim about the state of the art. It's a claim about where an intervention sits, and most of what gets reached for when outputs collapse sits in the wrong place.
 
-What would help, for the creativity case specifically, is something that treats the reward as a thing with a shelf life. Not a better reward model, but a reward model that expects to be wrong shortly and has some mechanism for noticing. POET gets there by regenerating problems. Self-play gets there by making the opponent improve. Neither is obviously the right shape for taste, which moves for reasons that have nothing to do with an adversary and everything to do with exposure: the thing gets seen, and seeing it is what wears it out.
+What would help, for the creativity case specifically, is something that treats the reward as a thing with a shelf life. Not a better reward model, but a reward model that expects to be wrong shortly and has some mechanism for noticing. POET moves the problem. Self-play moves the opponent. Neither is obviously the right shape for taste, which moves for reasons that have nothing to do with an adversary and everything to do with exposure: the thing gets seen, and seeing it is what wears it out.
+
+Which points at something narrower than a better score. If a thing wears out by being seen, then part of what's worth rewarding is timing: being somewhere before it fills up. That's a property of the region, not of the output, and it isn't what a reward model is built to notice. Whether it could be trained into the weights rather than bolted on at sampling time is the part we can't answer.
 
 If the target moves because measuring it moves it, then any fixed proxy is a photograph, and the question isn't how to take a better photograph. It's what we build instead.
