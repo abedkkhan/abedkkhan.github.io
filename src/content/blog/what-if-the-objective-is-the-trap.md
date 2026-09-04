@@ -18,7 +18,7 @@ The model never sees the target. It only ever sees the proxy. So: the reward goe
 
 Not worse in any way the numbers can see. On the benchmark everything is fine. Diversity scores hold. Semantic distance between generations looks healthy. But we read fifty samples and they're recognisably the same sample wearing different nouns. Somewhere in training the model found one shape that scored well, and it has been producing that shape ever since, more and more confidently.
 
-There's a reason that shape tends to be the safe one. [Ethan Smith](https://www.ethansmith2000.com/post/the-mean-preference-is-a-bad-estimate-of-preferences) argues that a reward model built by averaging ratings across people ends up pointing somewhere nobody actually stands. When tastes genuinely conflict, and they do, the average of them is the middle, and the middle is what nobody loves and nobody objects to. The blandness isn't a defect in the reward model. It's what the reward model was built to describe.
+There's a reason that shape tends to be the safe one. [Ethan Smith](https://www.ethansmith2000.com/post/the-mean-preference-is-a-bad-estimate-of-preferences) argues that a reward model built by averaging ratings across people ends up pointing somewhere nobody actually stands. When tastes genuinely conflict, and they do, the average of them is the middle, and the middle is what nobody loves and nobody objects to. The blandness isn't a defect in the reward model.
 
 The instinct is to blame the training. Wrong dataset, wrong hyperparameters, too many steps, not enough entropy at the end. So we tune. Raise the temperature, change the sampling, widen the data, and the model produces the same thing with more unusual word choices.
 
