@@ -2,7 +2,7 @@
 title: "First Draft"
 description: "On finetuning for creativity: the target we can only verify once, the proxy we optimize instead, and a reward curve that keeps climbing while the outputs collapse."
 pubDate: 2026-09-04
-readTime: "6 min read"
+readTime: "8 min read"
 tags: ["rl", "reward-hacking", "creativity", "evaluation"]
 ---
 
@@ -53,3 +53,17 @@ There's an argument, Stephen Jay Gould's, for why complexity shows up at all whe
 Which gives a clean line: the objective is the trap, nature had no objective, so the escape route is to be more like evolution.
 
 The line doesn't hold.
+
+## Two Kinds of Evolution
+
+The word is doing two jobs.
+
+Copying evolution into code isn't new. Evolutionary algorithms have done it for decades, and the mechanics transfer cleanly: a population of candidates, random mutation, selection of the ones that do better, repeat. Genetic algorithms, evolution strategies, CMA-ES, all of them are that loop.
+
+But something gets added in the translation, and it isn't small. Nature had no target. An evolutionary algorithm needs one, because selection has to be told what "better" means. So a fitness function goes in (written by someone, pointing at a goal) and from that moment the algorithm is maximising a number the way any other optimiser does. Population and mutation are the parts inherited from nature. The objective is the part that wasn't there.
+
+Which means "be more like evolution" collapses into two different instructions, and only one of them is available. We can copy the search. We can't copy the absence of a goal, because the algorithm doesn't run without one.
+
+[Salimans and coauthors](https://arxiv.org/abs/1703.03864) present evolution strategies as an alternative to Q-learning and policy gradients: not an alternative to having an objective, an alternative to the machinery for pursuing one. Same returns, same environments, same thing being maximised. ES is described there as black-box optimisation, it doesn't ask what the objective is or where it came from. It takes the number and improves it. The selling points are wall-clock time, parallelism, tolerance for delayed rewards and long horizons. Every one is a claim about how we move through the space. None is a claim about what we're moving toward.
+
+So an evolutionary algorithm on a deceptive objective is deceived. It has the population, it has the mutation, and it will use them to climb the same misleading landscape and settle on the same local optimum, perhaps having explored more of the space on the way there.
