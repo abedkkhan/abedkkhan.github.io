@@ -2,7 +2,7 @@
 title: "First Draft"
 description: "On finetuning for creativity: the target we can only verify once, the proxy we optimize instead, and a reward curve that keeps climbing while the outputs collapse."
 pubDate: 2026-09-04
-readTime: "15 min read"
+readTime: "16 min read"
 tags: ["rl", "reward-hacking", "creativity", "evaluation"]
 ---
 
@@ -120,4 +120,12 @@ Which is a different diagnosis from the one we've been running. Not "the objecti
 
 [POET's authors](https://arxiv.org/abs/1901.01753) got there first, and they don't think self-play goes far enough. In most coevolutionary systems, they note, the part of the environment that isn't the opponent stays fixed. The rival moves and the world doesn't. No amount of coevolution against a fixed task, they argue, produces something that can write poetry or invent mathematics. The environment itself has to change, and eventually the reward function with it.
 
-Which is where this stops. That last clause, the reward function moving too, is future work in their own paper. Everything above points at it and none of it gets there.
+## What's Open
+
+We don't have the resolution.
+
+The papers here run from 2011 to 2019. This isn't a survey of what's been built since, and it's likely parts of this have been addressed in ways worth knowing about. But the distinction survives regardless of what's been solved, because it isn't a claim about the state of the art. It's a claim about where an intervention sits, and most of what gets reached for when outputs collapse sits in the wrong place.
+
+What would help, for the creativity case specifically, is something that treats the reward as a thing with a shelf life. Not a better reward model, but a reward model that expects to be wrong shortly and has some mechanism for noticing. POET gets there by regenerating problems. Self-play gets there by making the opponent improve. Neither is obviously the right shape for taste, which moves for reasons that have nothing to do with an adversary and everything to do with exposure: the thing gets seen, and seeing it is what wears it out.
+
+If the target moves because measuring it moves it, then any fixed proxy is a photograph, and the question isn't how to take a better photograph. It's what we build instead.
