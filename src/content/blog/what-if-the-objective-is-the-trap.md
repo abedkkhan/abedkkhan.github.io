@@ -124,6 +124,8 @@ So a local optimum in nature is on a clock. Whatever made something optimal was 
 
 Which is a different diagnosis from the one we've been running. Not "the objective is the problem" but "the fixed objective is the problem". And it points somewhere else: at self-play, at adversarial setups, at anything where the thing scoring us improves as we improve.
 
+The title of this post is the position it took six sections to leave. The correction also re-reads them. Novelty search never removed the objective, it replaced it with one that moves, because what counts as novel is defined against what has already been found and that keeps growing. POET is the same move at a larger scale. Neither was the absence of a goal. Both were goals that refuse to hold still, which may be why they worked at all.
+
 [Wang and coauthors](https://arxiv.org/abs/1901.01753) got there first, and they don't think self-play goes far enough. In most coevolutionary systems, they note, the part of the environment that isn't the opponent stays fixed. The rival moves and the world doesn't. No amount of coevolution against a fixed task, they argue, produces something that can write poetry or invent mathematics. The environment itself has to change, and eventually the reward function with it.
 
 ## What's Open
