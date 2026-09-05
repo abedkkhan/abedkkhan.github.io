@@ -22,7 +22,7 @@ There's a reason that shape tends to be the safe one. Ethan Smith, in [The Mean 
 
 The instinct is to blame the training. Wrong dataset, wrong hyperparameters, too many steps, not enough entropy at the end. So we tune. Raise the temperature, change the sampling, widen the data, and the model produces the same thing with more unusual word choices.
 
-Eventually we notice the reward curve never stopped climbing. It went up the entire time the outputs were collapsing. That's the part worth sitting with. Nothing failed. The reward function did exactly what it was built to do, every step, and the result was a model that can't surprise us.
+Eventually we notice the reward curve never stopped climbing. It went up the entire time the outputs were collapsing. That's the part that should bother us. Nothing failed. The reward function did exactly what it was built to do, every step, and the result was a model that can't surprise us.
 
 ## Deception
 
