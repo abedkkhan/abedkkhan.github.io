@@ -22,7 +22,7 @@ There's a reason that shape tends to be the safe one. Ethan Smith, in [The Mean 
 
 The instinct is to blame the training. Wrong dataset, wrong hyperparameters, too many steps, not enough entropy at the end. So we tune. Raise the temperature, change the sampling, widen the data, and the model produces the same thing with more unusual word choices.
 
-Eventually we notice the reward curve never stopped climbing. It went up the entire time the outputs were collapsing. That's the part that should bother us. Nothing failed. The reward function did exactly what it was built to do, every step, and the result was a model that can't surprise us.
+Eventually we notice the reward curve never stopped climbing. It went up the entire time the outputs were collapsing. That's the part worth stopping on. Nothing failed. The reward function did exactly what it was built to do, every step, and the result was a model that can't surprise us.
 
 ## Deception
 
@@ -52,7 +52,7 @@ There's an argument, Stephen Jay Gould's, for why complexity shows up at all whe
 
 [Lehman and Stanley](https://stars.library.ucf.edu/facultybib2010/1530/) make the same observation from the other side. They note a view in biology that the drive toward complexity isn't primarily driven by selection at all: that selection can actively suppress it, because if selection pressure is too high, any deviation from a locally optimal behaviour gets filtered out. The same mechanism, running too hard, removes the things that would have led somewhere.
 
-Which gives a clean line: the objective is the trap, nature had no objective, so the escape route is to be more like evolution.
+That gives a clean line: the objective is the trap, nature had no objective, so the escape route is to be more like evolution.
 
 The line doesn't hold.
 
@@ -66,7 +66,7 @@ But something gets added in the translation, and it isn't small. Nothing ever wr
 
 ![A formal garden seen from the terrace above it, with open country beyond. In the foreground a parterre laid out to a drawing made before anything was planted, its beds answering each other in a pattern that only resolves when seen from up here. Past the boundary wall the same land continues as woodland that arranged itself, with no line in it drawn by anybody. Same soil, same rain, same seasons on both sides of the wall.](/blog/what-if-the-objective-is-the-trap/image_4.webp)
 
-Which means "be more like evolution" splits into two different instructions, and they are not the same size. Copying the search is easy. Dropping the goal is the hard one, because nothing can be selected without a way of ranking it.
+That splits "be more like evolution" into two different instructions, and they are not the same size. Copying the search is easy. Dropping the goal is the hard one, because nothing can be selected without a way of ranking it.
 
 Much of what gets built takes the easy half. [Evolution Strategies as a Scalable Alternative to Reinforcement Learning](https://arxiv.org/abs/1703.03864), by Salimans and coauthors, presents evolution strategies as an alternative to Q-learning and policy gradients, not as an alternative to having an objective. Same returns, same environments, same number being maximised. The selling points are wall-clock time, parallelism, and tolerance for long horizons: every one a claim about how we move through the space, none about what we are moving toward.
 
@@ -98,13 +98,13 @@ So far the choice has looked binary: keep the objective or drop it. There is a t
 
 The domain is a two-legged robot learning to cross broken ground. Instead of fixing one obstacle course and training an agent against it, POET keeps generating new courses by mutating the old ones, trains an agent on each, and then periodically tries every agent on every other agent's course. If an agent does better somewhere other than where it was raised, it takes over there. That last step is the part that matters.
 
-So there is no single problem being climbed. The reward function itself doesn't change, and it is the same one in every environment POET builds. What changes is the world it gets computed in. There's a growing population of problems, each with its own agent, and the whole thing keeps producing harder versions of itself. The paper's phrase for what these become is stepping stones, the same word Lehman and Stanley used eight years earlier, now describing solutions to intermediate problems that turn out to matter for problems generated later.
+There is no single problem being climbed. The reward function itself doesn't change, and it is the same one in every environment POET builds. What changes is the world it gets computed in. There's a growing population of problems, each with its own agent, and the whole thing keeps producing harder versions of itself. The paper's phrase for what these become is stepping stones, the same word Lehman and Stanley used eight years earlier, now describing solutions to intermediate problems that turn out to matter for problems generated later.
 
 Run evolution strategies directly on one of the environments POET built and solved, and they get a small fraction of the score that counts as solving it. The failure is a familiar one. The agents learn to move forward, and then they learn to freeze in front of an obstacle, because falling costs a hundred points and standing still costs almost nothing. The reward stays positive the whole time. The behaviour has collapsed into one shape.
 
 That transfer step is the mechanism worth taking. A solution that has plateaued on its own environment isn't discarded; it's tested somewhere else, where it might be exactly what's needed. The paper calls this goal switching, and it is how POET gets out of local optima. We escape the trap by changing which problem we're solving, not by climbing harder within it.
 
-Which is a different escape from novelty search's. Novelty search refuses to repeat. POET makes repetition pointless, because the problem we succeeded at is no longer the only problem in front of us.
+It is a different escape from novelty search's. Novelty search refuses to repeat. POET makes repetition pointless, because the problem we succeeded at is no longer the only problem in front of us.
 
 Three different places to intervene, then. Novelty search changes what selection reads. Go-Explore changes where the search begins and leaves the objective untouched. POET keeps the objective and multiplies the problems it gets applied to. The design space was never a switch.
 
@@ -116,11 +116,11 @@ Ethan Smith made the point, in conversation, that this reading is too clean. Nat
 
 That's the part we'd skipped. What nature lacks isn't an objective, it's a fixed one. Survival is defined against an environment and a set of rivals, and both move. Get faster and the predator gets faster. Find an unexploited niche and it fills. Nothing sets the bar. It sits relative to everything else, and everything else is adapting too.
 
-So a local optimum in nature is on a clock. Whatever made something optimal was optimal against conditions that no longer hold. Nothing has to climb out of the trap. The trap dissolves underneath it.
+A local optimum in nature is on a clock. Whatever made something optimal was optimal against conditions that no longer hold. Nothing has to climb out of the trap. The trap dissolves underneath it.
 
 ![A suit of full plate armour on its stand in a great hall, undamaged and beautifully made, the end point of centuries of steady improvement. On the table beside it lies a firearm. The armour has not failed at anything. The conditions it was built against have stopped holding.](/blog/what-if-the-objective-is-the-trap/image_5.webp)
 
-Which is a different diagnosis from the one we've been running. Not "the objective is the problem" but "the fixed objective is the problem". And it points somewhere else: at self-play, at adversarial setups, at anything where the thing scoring us improves as we improve.
+That is a different diagnosis from the one we've been running. Not "the objective is the problem" but "the fixed objective is the problem". And it points somewhere else: at self-play, at adversarial setups, at anything where the thing scoring us improves as we improve.
 
 [Wang and coauthors](https://arxiv.org/abs/1901.01753) got there first, and they don't think self-play goes far enough. In most coevolutionary systems, they note, the part of the environment that isn't the opponent stays fixed. The rival moves and the world doesn't. No amount of coevolution against a fixed task, they argue, produces something that can write poetry or invent mathematics. The environment itself has to change, and eventually the reward function with it.
 
